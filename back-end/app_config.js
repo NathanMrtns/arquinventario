@@ -3,8 +3,6 @@ var app = module.exports = express();
 var bodyParser = require('body-parser');
 var router = express.Router();
 
-var userRoutes = require('./routes/user.js');
-
 var allowCors = function(req, res, next) {
 
 	res.header('Acess-Control-Allow-Origin', '127.0.0.1:5000');
@@ -15,6 +13,13 @@ var allowCors = function(req, res, next) {
 	next();
 }
 
+//DB Connection
+var db_string = 'mongodb://127.0.0.1/arquinventario';
+var mongoose = require('mongoose').connect(db_string);
+
+//Models
+require('./models/user');
+
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
@@ -24,3 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+
+//Routes
+var userRoutes = require('./routes/user.js');
