@@ -8,7 +8,7 @@
 /tmp
 /app/**/*.js
 /app/**/*.js.map
-
+/lib
 # dependencies
 /node_modules
 /bower_components
