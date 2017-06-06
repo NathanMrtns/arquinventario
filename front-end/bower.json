@@ -1,0 +1,21 @@
+{
+  "name": "arquinventario",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Nathan <nathanmrtns@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/NathanMrtns/arquinventario",
+  "private": true,
+  "directory": "public/lib",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/components"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "materialize": "^0.98.2"
+  }
+}

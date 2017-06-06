@@ -8,10 +8,11 @@
 /tmp
 /app/**/*.js
 /app/**/*.js.map
-/lib
+
 # dependencies
 /node_modules
 /bower_components
+/lib
 
 # IDEs and editors
 /.idea
@@ -122,6 +123,7 @@ coverage
 
 # Bower dependency directory (https://bower.io/)
 bower_components
+lib
 
 # node-waf configuration
 .lock-wscript
