@@ -5,7 +5,15 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  email: String
+  email: {
+    type:String,
+    required: true,
+    unique:true
+  },
+  password:{
+    type:String,
+    required:true
+  }
 });
 
 mongoose.model('User', userSchema);
