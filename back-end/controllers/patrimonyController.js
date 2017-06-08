@@ -13,8 +13,12 @@ exports.getPatrimonies = function(callback){
 
 exports.createPatrimony = function(req, callback){
   var patrimony = new Patrimony({
-    name:req.body.name
-    //missing other fields
+    name:req.body.name,
+    year:req.body.year,
+    style:req.body.style,
+    history:req.body.history,
+    description:req.body.description,
+    tipology:req.body.tipology
   });
 
   patrimony.save(function(err){
@@ -28,11 +32,12 @@ exports.updatePatrimony = function(req, callback){
     if(error){
       res.json({error:'Patrimônio não encontrado!'});
     }else{
-      if(req.body.name){
-        patrimony.name = req.body.name;
-      }
-
-      //missing other fields
+      if(req.body.name) patrimony.name = req.body.name;
+      if(req.body.year) patrimony.year = req.body.year;
+      if(req.body.style) patrimony.style = req.body.style;
+      if(req.body.history) patrimony.history = req.body.history;
+      if(req.body.description) patrimony.description = req.body.description;
+      if(req.body.tipology) patrimony.tipology = req.body.tipology;
 
       patrimony.save(function(err, patrimony){
         if(err) callback({err:'Não foi possivel salvar'});

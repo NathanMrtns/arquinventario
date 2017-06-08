@@ -30,8 +30,3 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-
-
-//Routes
-// var userRoutes = require('./routes/user.js');
-// var patrimonyRoutes = require('./routes/patrimony.js');
