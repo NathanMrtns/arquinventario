@@ -39,9 +39,9 @@ exports.updateUser = function(req, callback){
         user.password = req.body.password;
       }
 
-      user.save(function(err, car){
+      user.save(function(err, user){
         if(err) callback({err:'Não foi possivel salvar'});
-        else callback(car);
+        else callback(user);
       });
     }
   });

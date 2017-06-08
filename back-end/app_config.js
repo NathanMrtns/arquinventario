@@ -19,6 +19,7 @@ var mongoose = require('mongoose').connect(db_string);
 
 //Models
 require('./models/user');
+require('./models/patrimony');
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
@@ -32,4 +33,5 @@ app.use(bodyParser.urlencoded({
 
 
 //Routes
-var userRoutes = require('./routes/user.js');
+// var userRoutes = require('./routes/user.js');
+// var patrimonyRoutes = require('./routes/patrimony.js');

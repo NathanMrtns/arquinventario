@@ -1,29 +1,29 @@
 var express = require('express')
   , router = express.Router();
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
-var userController = require('../controllers/userController');
+var Patrimony = mongoose.model('Patrimony');
+var patrimonyCtrl = require('../controllers/patrimonyController');
 
 router.get('/', function(req, res) {
-  userController.getUsers(function(response){
+  patrimonyCtrl.getPatrimonies(function(response){
     res.json(response);
   });
 });
 
 router.post('/', function(req, res){
-  userController.createUser(req, function(response){
+  patrimonyCtrl.createPatrimony(req, function(response){
     res.json(response);
   });
 });
 
 router.put('/edit/:id', function(req, res){
-  userController.updateUser(req, function(response){
+  patrimonyCtrl.updatePatrimony(req, function(response){
     res.json(response);
   });
 });
 
 router.delete('/:id', function(req, res){
-  userController.removeUser(req, function(response){
+  patrimonyCtrl.removePatrimony(req, function(response){
     res.json(response);
   });
 });
