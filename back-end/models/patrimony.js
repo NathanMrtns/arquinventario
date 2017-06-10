@@ -20,6 +20,6 @@ var patrimonySchema = new mongoose.Schema({
   tipology:{
     type:String
   }
-});
+},{collection:'patrimony'});
 
 mongoose.model('Patrimony', patrimonySchema);
