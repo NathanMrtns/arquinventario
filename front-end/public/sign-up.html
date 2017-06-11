@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <html ng-app="myApp">
-<meta charset="utf-8">
+<meta charset="utf-8"> <!-- Ajeitar acentos -->
 <head>
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="lib/materialize/bin/materialize.js">
@@ -25,7 +25,7 @@
   <main>
     <center>
       
-      <h5 class="indigo-text">Entre na sua conta</h5>
+      <h5 class="indigo-text">Realize seu cadastro</h5>
       <div class="section"></div>
 
       <div class="container" ng-controller="AppCtrl">
@@ -38,32 +38,46 @@
             </div>
 
             <div class='row'>
-              <div class='input-field col s12'>
+              <div class='input-field'>
+                <input class='validate' type='text' id='name' />
+                <label>Nome</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
                 <input class='validate' type='text' name='username' id='username' />
                 <label for='email'>Usuário</label>
               </div>
             </div>
 
+
             <div class='row'>
-              <div class='input-field col s12'>
+              <div class='input-field'>
                 <input class='validate' type='password' name='password' id='password' />
                 <label for='password'>Senha</label>
               </div>
-              <label style='float: right;'>
-								<a class='pink-text' href='#!'><b>Perdeu sua senha?</b></a>
-							</label>
             </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='password' name='password-repeated' id='password-repeated' />
+                <label for='password'>Repetir Senha</label>
+              </div>
+            </div>
+
+
 
             <br />
             <center>
               <div class='row'>
-                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Login</button>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
               </div>
             </center>
           </form>
         </div>
       </div>
-      <a href="sign-up.html">Crie uma conta</a>
+      Já tem Login? <a href="index.html">Faça seu login agora!</a>
     </center>
 
     <div class="section"></div>
