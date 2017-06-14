@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html ng-app="app">
+<meta charset="utf-8">
+
+<head>
+  <title>Arquinventario</title>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="lib/materialize/bin/materialize.js">
+
+	<script src="lib/angular/angular.js"></script>
+	<!-- <script src="controllers/controller.js"></script> -->
+  <script>
+    angular.module("app", []);
+    angular.module("app").controller("newBuildingController", function($scope));
+  </script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="lib/materialize/bin/materialize.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+</head>
+  
+<body>
+  <div class="section"></div>
+
+  <main>
+    <center>
+      <h5 class="indigo-text">Realize seu cadastro</h5>
+      <div class="section"></div>
+
+      <div class="container" ng-controller="newBuildingController">
+        <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+          <form class="col s12" method="post">
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name="name" id='name' ng-model="name" />
+                <label>Nome</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='date' id='date' ng-model='date' />
+                <label>Tempo</label>
+              </div>
+            </div>
+
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='style' id='style' ng-model='style' />
+                <label>Estilo Arquitetônico</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='history' id='history' ng-model='history' />
+                <label>História</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='description' id='description' ng-model='description' />
+                <label>Descrição</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='tipology' id='tipology' ng-model='tipology' />
+                <label>Tipologia</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='photos' id='photos' ng-model='photos'/>
+                <label>Fotos</label>
+              </div>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' ng-click='submit()' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+
+  </main>
+
+</body>
+
+</html>
