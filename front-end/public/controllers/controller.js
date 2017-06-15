@@ -13,6 +13,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url:"/home",
         templateUrl : "templates/home.html"
     })
+
+    .state("signUp", {
+        url: "/signUp",
+        templateUrl : "templates/sign-up.html",
+        controller: "signUpCtrl"
+    })
 });
 
 app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
@@ -36,6 +42,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, 
             console.log(response);
             $state.go("home");
         });
+    }
+    
+    $scope.goSignUp = function(){
+    	$state.go("signUp");
     }
     
 }]);

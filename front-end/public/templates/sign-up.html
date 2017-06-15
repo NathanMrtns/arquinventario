@@ -28,7 +28,7 @@
       <h5 class="indigo-text">Realize seu cadastro</h5>
       <div class="section"></div>
 
-      <div class="container" ng-controller="AppCtrl">
+      <div class="container">
         <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
           <form class="col s12" method="post">
@@ -36,17 +36,17 @@
               <div class='col s12'>
               </div>
             </div>
-
+            <p ng-show="error" style="color: red;">{{ error }}</p>
             <div class='row'>
               <div class='input-field'>
-                <input class='validate' type='text' id='name' />
+                <input class='validate' type='text' id='name' ng-model="nome"/>
                 <label>Nome</label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field'>
-                <input class='validate' type='text' name='username' id='username' />
+                <input class='validate' type='text' name='username' id='username' ng-model="email" />
                 <label for='email'>Usuário</label>
               </div>
             </div>
@@ -54,14 +54,14 @@
 
             <div class='row'>
               <div class='input-field'>
-                <input class='validate' type='password' name='password' id='password' />
+                <input class='validate' type='password' name='password' id='password' ng-model="senha" />
                 <label for='password'>Senha</label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field'>
-                <input class='validate' type='password' name='password-repeated' id='password-repeated' />
+                <input class='validate' type='password' name='password-repeated' id='password-repeated' ng-model="senha-repetida" />
                 <label for='password'>Repetir Senha</label>
               </div>
             </div>
@@ -71,13 +71,13 @@
             <br />
             <center>
               <div class='row'>
-                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
+                <button type='submit' ng-click="submit()" name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
               </div>
             </center>
           </form>
         </div>
       </div>
-      Já tem Login? <a href="index.html">Faça seu login agora!</a>
+      Já tem Login? <a href=# ng-click="goLogin()">Faça seu login agora!</a>
     </center>
 
     <div class="section"></div>
