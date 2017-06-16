@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app');
 
 app.controller('newBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
@@ -20,7 +20,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 		console.log($scope.photos);
 		$http({
 			method: 'POST',
-			url: 'http://localhost:8080/login',
+			url: '',
 			data: {
 				"name":$scope.name,
 				"date": $scope.date,
