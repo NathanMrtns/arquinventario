@@ -4,6 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/login");
 
     $stateProvider
+    
     .state('login', {
         url: "/login",
         templateUrl: 'templates/login.html',
@@ -12,6 +13,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state("home",{
         url:"/home",
         templateUrl : "templates/home.html"
+    })
+    .state("addNewBuilding",{
+        url:"/addNewBuilding",
+        templateUrl : "templates/add-new-building.html",
+        controller:"newBuildingController"
     })
 });
 

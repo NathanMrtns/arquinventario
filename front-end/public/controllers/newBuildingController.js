@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ui.router']);
 
-app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('newBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
 	$scope.name = "";
 	$scope.date = "";
@@ -31,8 +31,8 @@ app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, 
 				"photos": $scope.photos
 			}
 		}).then(function(response){
-			console.log(response);
-			$state.go("home");
+			//console.log(response);
+			//$state.go("home");
 		});
 	}
 

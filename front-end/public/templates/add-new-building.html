@@ -6,17 +6,13 @@
   <title>Arquinventario</title>
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="lib/materialize/bin/materialize.js">
+	<link rel="stylesheet" href="/Users/silvarthur/Desktop/arquinventario/front-end/public/lib/materialize/bin/materialize.js">
 
-	<script src="lib/angular/angular.js"></script>
-	<!-- <script src="controllers/controller.js"></script> -->
-  <script>
-    angular.module("app", []);
-    angular.module("app").controller("newBuildingController", function($scope));
-  </script>
+	<script src="/Users/silvarthur/Desktop/arquinventario/front-end/public/lib/angular/angular.js"></script>
+	<script src="/Users/silvarthur/Desktop/arquinventario/front-end/public/controllers/controller.js"></script>
 	
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="lib/materialize/bin/materialize.css">
+	<link rel="stylesheet" href="/Users/silvarthur/Desktop/arquinventario/front-end/public/lib/materialize/bin/materialize.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
@@ -31,10 +27,10 @@
 
   <main>
     <center>
-      <h5 class="indigo-text">Realize seu cadastro</h5>
+      <h5 class="indigo-text">Cadastrar Novo Patrimônio</h5>
       <div class="section"></div>
 
-      <div class="container" ng-controller="newBuildingController">
+      <div class="container">
         <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
           <form class="col s12" method="post">
@@ -94,11 +90,13 @@
             </div>
 
             <br />
+
             <center>
               <div class='row'>
-                <button type='submit' ng-click='submit()' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
+                <button type='submit' ng-click='submit()' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastrar</button>
               </div>
             </center>
+
           </form>
         </div>
       </div>
