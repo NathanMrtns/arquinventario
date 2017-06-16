@@ -18,9 +18,20 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 		console.log($scope.description);
 		console.log($scope.tipology);
 		console.log($scope.photos);
+
+		data =  {
+				"name":$scope.name,
+				"date": $scope.date,
+				"style": $scope.style,
+				"history": $scope.history,
+				"description": $scope.description,
+				"tipology": $scope.tipology,
+				"photos": $scope.photos
+			}
+		
 		$http({
 			method: 'POST',
-			url: '',
+			url: 'http://localhost:8080/patrimony',
 			data: {
 				"name":$scope.name,
 				"date": $scope.date,
