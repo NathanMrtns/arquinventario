@@ -47,4 +47,8 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 		});
 	}
 
+	$scope.goToHomePage = function() {
+		$state.go("home");
+	}
+
 }]);
