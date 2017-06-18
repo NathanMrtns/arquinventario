@@ -42,13 +42,16 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 				"photos": $scope.photos
 			}
 		}).then(function(response){
-			//console.log(response);
-			//$state.go("home");
+			$state.go("home");
 		});
 	}
 
 	$scope.goToHomePage = function() {
 		$state.go("home");
+	}
+
+	$scope.test = function() {
+		$state.go("TEST");
 	}
 
 }]);

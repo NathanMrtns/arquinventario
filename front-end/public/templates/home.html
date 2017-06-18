@@ -6,11 +6,54 @@
 </head>
   
 <body>
+	</br>
 
+	<center>
+		<div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 32px 0px 32px; border: 1px solid #EEE;">
+			<center>
+				<div class='row'>
+				  	<table class='striped red lighten-5'>
+				  		<tr>
+				  			<th>Nome do Patrimônio</th>
+				  		</tr>
+				  		<tr ng-repeat='patrimony in patrimonies'>
+				  			<td>{{patrimony.name}}</td>
+				  		</tr>
+				  	</table>
+				</div>
+			</center>
+
+			</br>
+
+			<center>
+				<div class='row'>
+					<button type='submit' ng-click='goToAddBuildingPage()' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastrar Novo Patrimônio</button>
+				</div>
+			</center>
+		</div>
+	</center>
+
+</body>
+
+</html>
+
+<!--
   <main>
     <center>
 		<div class="container">
 			<div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+			<center>
+			  	<table class='striped'>
+			  		<tr>
+			  			<th>Nome do Patrimônio</th>
+			  		</tr>
+			  		<tr ng-repeat='patrimony in patrimonies'>
+			  			<td>{{patrimony.name}}</td>
+			  		</tr>
+			  	</table>
+			</center>
+
 
 			<center>
 				<div class='row'>
@@ -21,7 +64,4 @@
 		</div>
     </center>
   </main>
-
-</body>
-
-</html>
+-->
