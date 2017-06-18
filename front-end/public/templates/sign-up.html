@@ -1,42 +1,20 @@
 <!DOCTYPE>
-<html ng-app="app">
 <meta charset="utf-8"> <!-- Ajeitar acentos -->
-<head>
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="lib/materialize/bin/materialize.js">
-
-	<script src="lib/angular/angular.js"></script>
-	<script src="controllers/controller.js"></script>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="lib/materialize/bin/materialize.css">
-
-  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
-  	<title>Arquinventario</title>
-</head>
   
 <body>
   <div class="section"></div>
   <main>
     <center>
-      
       <h5 class="indigo-text">Realize seu cadastro</h5>
       <div class="section"></div>
-
+      <p ng-show="error" style="color: red;">{{ error }}</p>
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
           <form class="col s12" method="post">
             <div class='row'>
               <div class='col s12'>
               </div>
             </div>
-            <p ng-show="error" style="color: red;">{{ error }}</p>
             <div class='row'>
               <div class='input-field'>
                 <input class='validate' type='text' id='name' ng-model="nome"/>
@@ -61,7 +39,7 @@
 
             <div class='row'>
               <div class='input-field'>
-                <input class='validate' type='password' name='password-repeated' id='password-repeated' ng-model="senha-repetida" />
+                <input class='validate' type='password' name='password-repeated' id='password-repeated' ng-model="senhaRepetida" />
                 <label for='password'>Repetir Senha</label>
               </div>
             </div>
@@ -77,7 +55,7 @@
           </form>
         </div>
       </div>
-      Já tem Login? <a href=# ng-click="goLogin()">Faça seu login agora!</a>
+      Já tem Login? <a ui-sref="login">Faça seu login agora!</a>
     </center>
 
     <div class="section"></div>
