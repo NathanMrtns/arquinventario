@@ -20,6 +20,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl : "templates/add-new-building.html",
         controller:"newBuildingController"
     })
+    .state("building",{
+        url:"/building",
+        templateUrl : "templates/building.html",
+        controller:"buildingCtrl"
+    })
 });
 
 app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {

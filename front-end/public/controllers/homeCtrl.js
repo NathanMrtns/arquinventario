@@ -33,4 +33,12 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 		$state.go("addNewBuilding");
 	}
 
+	$scope.goToBuildingPage = function() {
+		$state.go("building");
+	}
+
+	$scope.test = function() {
+		console.log("TEST");
+	}
+
 }]);
