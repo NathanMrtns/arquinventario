@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('login', {
         url: "/login",
         templateUrl: 'templates/login.html',
-        controller:"AppCtrl"
+        controller:"loginCtrl"
     })
     .state("home",{
         url:"/home",
@@ -20,29 +20,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller: "SignUpController"
     })
 });
-
-app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    console.log("Hello World from controller");
-
-    $scope.message = "Hello World";
-    $scope.email = "";
-    $scope.password = "";
-
-    $scope.submit = function(){
-        console.log($scope.email);
-        console.log($scope.password);
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8080/login',
-            data: {
-                "email":$scope.email,
-                "password": $scope.password
-            }
-        }).then(function(response){
-            console.log(response);
-            $state.go("home");
-        });
-    }
-
-}]);
 
