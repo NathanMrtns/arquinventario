@@ -1,53 +1,54 @@
 <!DOCTYPE>
-<html ng-app="app">
-<meta charset="utf-8">
-<head>
-</head>
+<meta charset="utf-8"> <!-- Ajeitar acentos -->
 
 <body>
   <div class="section"></div>
   <main>
     <center>
-      
-      <h5 class="indigo-text">Entre na sua conta</h5>
+      <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+      <img src="img/Arquinventario.png" style="max-width: 90%; height: auto;"/>
       <div class="section"></div>
-
-      <div class="container">
-        <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-          <form class="col s12" method="post">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input class='validate' type='text' name='username' id='username' ng-model="email" />
-                <label for='email'>Usuário</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field col s12'>
-                <input class='validate' type='password' name='password' id='password' ng-model="password" />
-                <label for='password'>Senha</label>
-              </div>
-              <label style='float: right;'>
-								<a class='pink-text' href='#!'><b>Perdeu sua senha?</b></a>
-							</label>
-            </div>
-
-            <br />
-            <center>
-              <div class='row'>
-                <button type='submit' ng-click="submit()" name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Login</button>
-              </div>
-            </center>
-          </form>
-        </div>
       </div>
-      <a ui-sref="signUp">Crie uma conta</a>
+          <div class="modal-body" style="padding: 0px 20px;">
+            <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; padding: 5px 32px; border-radius: 5px; border: 1px solid #EEE;">
+
+              <form class="col-md-12 center-block" method="post">
+                <div class='row'>
+                  <div class='col s12'>
+                  </div>
+                </div>
+                <img src="img/Icon.png" style="max-width: 60%; max-height: 60%;"/>
+                <br>
+                <div class='row'>
+                    <div class='input-field col s12'>
+                    <input class='validate' type='text' name='username' id='username' ng-model="email" required="true" />
+                    <label for='email'><i class="fa">&#xf2be;</i> Email</label>
+                  </div>
+                </div>
+
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input class='validate' type='password' name='password' id='password' ng-model="password" required="true" />
+                    <label for='password'><i class="fa">&#xf023;</i> Senha</label>
+                  </div>
+                  <label style='float: right;'>
+                    <a class='pink-text' data-target="#ForgotModal" data-toggle="modal"><b>Perdeu sua senha?</b></a>
+                  </label>
+                </div>
+
+                <center>
+                    <div class='row'>
+                    <button type='submit' ng-click="submit()" name='btn_login' class='col s12 btn btn-large waves-effect' style="border-radius: 5px; background-color: #65cdf2; color: #32241c;">Login</button>
+                  </div>
+                  Não tem conta? <a ui-sref="signUp">Crie agora</a>
+                </center>
+              </form>
+            </div>
+          </div>
+    </div>
+    </div>
     </center>
     <div class="section"></div>
     <div class="section"></div>
