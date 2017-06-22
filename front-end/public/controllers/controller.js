@@ -19,6 +19,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url:"/addNewBuilding",
         templateUrl : "templates/add-new-building.html",
         controller: "newBuildingController"
+    }).state("editBuilding",{
+        url:"/editBuilding",
+        params: {
+            _id:null,
+            name: null,
+            year: null,
+            style: null,
+            description: null,
+            history: null,
+            tipology: null
+        },
+        templateUrl : "templates/add-new-building.html",
+        controller: "editBuildingController"
     })
     .state("building",{
         url:"/building",

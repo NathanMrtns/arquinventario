@@ -40,8 +40,56 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 		$state.go("home");
 	}
 
-	$scope.test = function() {
-		$state.go("TEST");
+}]);
+
+app.controller('editBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+	
+	var patrimony = $state.params;
+
+	$scope.name = $state.params.name;
+	$scope.year = $state.params.year;
+	$scope.style = $state.params.style;
+	$scope.history = $state.params.history;
+	$scope.description = $state.params.description;
+	$scope.tipology = $state.params.tipology;
+	Materialize.updateTextFields();
+	
+	$scope.submit = function(){
+		data =  {
+				"name":$scope.name,
+				"year": $scope.year,
+				"style": $scope.style,
+				"history": $scope.history,
+				"description": $scope.description,
+				"tipology": $scope.tipology
+			}
+		
+		$http({
+			method: 'PUT',
+			url: 'http://localhost:8080/patrimony/edit/'+patrimony._id,
+			data: {
+				"name":$scope.name,
+				"year": $scope.year,
+				"style": $scope.style,
+				"history": $scope.history,
+				"description": $scope.description,
+				"tipology": $scope.tipology
+			}
+		}).then(function(response){
+			$state.go("home");
+		});
 	}
 
-}]);
+	$scope.goToHomePage = function() {
+		$state.go("home");
+	}
+
+	updateFields();
+
+}])
+
+function updateFields(){
+	$("#name,#year,#style,#history,#description,#tipology").attr("placeholder", "some new value").trigger("md:updateinput");
+
+	Materialize.updateTextFields();
+}
