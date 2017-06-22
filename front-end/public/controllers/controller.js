@@ -8,7 +8,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('login', {
         url: "/login",
         templateUrl: 'templates/login.html',
-        controller: "AppCtrl"
+        controller:"loginCtrl"
+    })
+    .state("signUp", {
+        url: "/signUp",
+        templateUrl : "templates/sign-up.html",
+        controller: "SignUpController"
     })
     .state("home",{
         url:"/home",
@@ -69,3 +74,4 @@ app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, 
     }
     
 }]);
+

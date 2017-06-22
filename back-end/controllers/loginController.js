@@ -12,7 +12,7 @@ exports.login = function(req, callback){
         callback(401);
       }
     }else{
-      callback('Usuário não encontrado');
+      callback(404);
     }
   });
 };

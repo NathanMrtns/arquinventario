@@ -1,5 +1,4 @@
 <!DOCTYPE>
-<html ng-app="app">
 <meta charset="utf-8"> <!-- Ajeitar acentos -->
 <head>
   	<title>Arquinventario</title>
@@ -9,62 +8,65 @@
   <div class="section"></div>
   <main>
     <center>
-      
-      <h5 class="indigo-text">Realize seu cadastro</h5>
+
+      <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+      <img src="img/Arquinventario.png" style="max-width: 90%; height: auto;"/>
       <div class="section"></div>
-
-      <div class="container" ng-controller="AppCtrl">
-        <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-          <form class="col s12" method="post">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' id='name' />
-                <label>Nome</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='username' id='username' />
-                <label for='email'>Usuário</label>
-              </div>
-            </div>
-
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='password' name='password' id='password' />
-                <label for='password'>Senha</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='password' name='password-repeated' id='password-repeated' />
-                <label for='password'>Repetir Senha</label>
-              </div>
-            </div>
-
-
-
-            <br />
-            <center>
-              <div class='row'>
-                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastre</button>
-              </div>
-            </center>
-          </form>
-        </div>
       </div>
-      Já tem Login? <a href="index.html">Faça seu login agora!</a>
-    </center>
+          <div class="modal-body" style="padding: 0px 20px;">
+            <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; padding: 5px 32px; border-radius: 5px; border: 1px solid #EEE;">
 
+              <form class="col-md-12 center-block" method="post">
+                <div class='row'>
+                  <div class='col s12'>
+                  </div>
+                </div>
+                <img src="img/Icon.png" style="max-width: 60%; max-height: 60%;"/>
+                <p ng-show="error" style="color: red;">{{ error }}</p>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' id='name' ng-model="nome" required="true" />
+                <label for='email'><i class="fa">&#xf2be;</i> Nome</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='text' name='username' id='username' ng-model="email" required="true" />
+                 <label for='email'><i class="fa">&#xf2be;</i> Email</label>
+              </div>
+            </div>
+
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='password' name='password' id='password' ng-model="senha" required="true" />
+                <label for='password'><i class="fa">&#xf023;</i> Senha</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field'>
+                <input class='validate' type='password' name='password-repeated' id='password-repeated' ng-model="senhaRepetida" required="true" />
+                <label for='password'><i class="fa">&#xf023;</i> Repetir Senha</label>
+              </div>
+            </div>
+
+                <center>
+                    <div class='row'>
+                        <button type='submit' ng-click="submit()" name='btn_login' class='col s12 btn btn-large waves-effect' style="border-radius: 5px; background-color: #65cdf2; color: #32241c;">Cadastre-se</button>
+                  </div>
+                  Já tem conta? <a ui-sref="login">Faça login agora</a>
+                </center>
+              </form>
+            </div>
+          </div>
+    </div>
+    </div>
+    </center>
     <div class="section"></div>
     <div class="section"></div>
   </main>
