@@ -3,7 +3,7 @@ var app = angular.module('app');
 app.controller('newBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
 	$scope.name = "";
-	$scope.date = "";
+	$scope.year = "";
 	$scope.style = "";
 	$scope.history = "";
 	$scope.description = "";
@@ -11,17 +11,9 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 	$scope.photos = "";
 
 	$scope.submit = function(){
-		console.log($scope.name);
-		console.log($scope.date);
-		console.log($scope.style);
-		console.log($scope.history);
-		console.log($scope.description);
-		console.log($scope.tipology);
-		console.log($scope.photos);
-
 		data =  {
 				"name":$scope.name,
-				"date": $scope.date,
+				"year": $scope.year,
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,
@@ -34,7 +26,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 			url: 'http://localhost:8080/patrimony',
 			data: {
 				"name":$scope.name,
-				"date": $scope.date,
+				"year": $scope.year,
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,

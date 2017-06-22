@@ -6,4 +6,8 @@ app.controller('buildingCtrl', ['$scope', '$http', '$state', function($scope, $h
 		$state.go("home");
 	}
 
+	$scope.test = function() {
+		console.log($state.params.year);
+	}
+
 }]);

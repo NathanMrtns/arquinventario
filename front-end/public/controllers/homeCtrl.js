@@ -1,11 +1,9 @@
 var app = angular.module('app');
 
 app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-
 	$scope.patrimonies = "";
 
 	getAllPatrimonies = function() {
-		console.log("TEST1");
 		$http({
 			method: 'GET',
 			url: 'http://localhost:8080/patrimony',
@@ -21,12 +19,15 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 		$state.go("addNewBuilding");
 	}
 
-	$scope.goToBuildingPage = function() {
-		$state.go("building");
-	}
+	$scope.goToBuildingPage = function(patrimony) {
+		var name = patrimony.name;
+		var year = patrimony.year;
+		var style = patrimony.style;
+		var history = patrimony.history;
+		var description = patrimony.description;
+		var tipology = patrimony.tipology;
 
-	$scope.test = function() {
-		console.log("TEST");
+		$state.go("building", {name:name, year:year, style:style, history:history, 
+			                   description:description, tipology:tipology});
 	}
-
 }]);
