@@ -18,6 +18,8 @@ var allowCors = function(req, res, next) {
 
 //DB Connection
 var db_string = 'mongodb://54.207.37.187/arquinventario';
+//var db_string = 'mongodb://localhost/arquinventario';
+
 var mongoose = require('mongoose').connect(db_string);
 
 //Models
