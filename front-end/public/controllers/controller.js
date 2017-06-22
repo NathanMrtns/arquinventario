@@ -23,6 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state("building",{
         url:"/building",
         params: {
+            _id:null,
             name: null,
             year: null,
             style: null,

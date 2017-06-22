@@ -9,7 +9,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 			url: 'http://localhost:8080/patrimony',
 		}).then(function(response){
 			$scope.patrimonies = response.data;
-			console.log($scope.patrimonies);
 		});
 	}
 
@@ -20,6 +19,7 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 	}
 
 	$scope.goToBuildingPage = function(patrimony) {
+		var patrimony_id = patrimony._id;
 		var name = patrimony.name;
 		var year = patrimony.year;
 		var style = patrimony.style;
@@ -27,7 +27,8 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 		var description = patrimony.description;
 		var tipology = patrimony.tipology;
 
-		$state.go("building", {name:name, year:year, style:style, history:history, 
-			                   description:description, tipology:tipology});
+		// {pat_id:patrimony_id, name:name, year:year, style:style, history:history, 
+		// 	                   description:description, tipology:tipology}
+		$state.go("building", patrimony);
 	}
 }]);

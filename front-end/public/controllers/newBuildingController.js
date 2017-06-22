@@ -17,8 +17,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,
-				"tipology": $scope.tipology,
-				"photos": $scope.photos
+				"tipology": $scope.tipology
 			}
 		
 		$http({
@@ -30,8 +29,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,
-				"tipology": $scope.tipology,
-				"photos": $scope.photos
+				"tipology": $scope.tipology
 			}
 		}).then(function(response){
 			$state.go("home");
