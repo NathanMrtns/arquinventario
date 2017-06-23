@@ -1,57 +1,45 @@
 <!DOCTYPE>
 <meta charset="utf-8"> <!-- Ajeitar acentos -->
-
 <body>
-  <div class="section"></div>
-  <main>
-    <center>
-      <div class="modal-dialog">
-      <div class="modal-content">
-      <div class="modal-header">
-      <img src="img/Arquinventario.png" style="max-width: 90%; height: auto;"/>
-      <div class="section"></div>
-      </div>
-          <div class="modal-body" style="padding: 0px 20px;">
-            <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; padding: 5px 32px; border-radius: 5px; border: 1px solid #EEE;">
-
-              <form class="col-md-12 center-block" method="post">
-                <div class='row'>
-                  <div class='col s12'>
-                  </div>
-                </div>
-                <img src="img/Icon.png" style="max-width: 60%; max-height: 60%;"/>
-                <br>
-                <div class='row'>
-                    <div class='input-field col s12'>
-                    <input class='validate' type='text' name='username' id='username' ng-model="email" required="true" />
-                    <label for='email'><i class="fa">&#xf2be;</i> Email</label>
-                  </div>
-                </div>
-
-                <div class='row'>
-                  <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='password' ng-model="password" required="true" />
-                    <label for='password'><i class="fa">&#xf023;</i> Senha</label>
-                  </div>
-                  <label style='float: right;'>
-                    <a class='pink-text' data-target="#ForgotModal" data-toggle="modal"><b>Perdeu sua senha?</b></a>
-                  </label>
-                </div>
-
-                <center>
-                    <div class='row'>
-                    <button type='submit' ng-click="submit()" name='btn_login' class='col s12 btn btn-large waves-effect' style="border-radius: 5px; background-color: #65cdf2; color: #32241c;">Login</button>
-                  </div>
-                  Não tem conta? <a ui-sref="signUp">Crie agora</a>
-                </center>
-              </form>
+  <div class="container">    
+      <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+          <div class="row">                
+            <div class="text-center">
+              <img src="img/Icon.png">
             </div>
           </div>
-    </div>
-    </div>
-    </center>
-    <div class="section"></div>
-    <div class="section"></div>
-  </main>
+          
+          <div class="panel panel-default" >
+              <div class="panel-heading">
+                  <div class="panel-title text-center">Arquinventário</div>
+              </div>     
+
+              <div class="panel-body" >
+
+                  <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                    
+                      <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                          <input id="user" type="text" class="form-control" name="email" ng-model="email" value="" placeholder="Email">                                        
+                      </div>
+
+                      <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input id="password" type="password" class="form-control" name="password" ng-model="password" placeholder="Password">
+                      </div>                                                                  
+                      <span>Não tem conta? <a ui-sref="signUp">Crie agora</a></span>
+                      <div class="form-group">
+                          <!-- Button -->
+                          <div class="col-sm-12 controls">
+                              <button type="button" class="btn btn-primary pull-right" ng-click="submit()">Primary</button>
+                          </div>
+                      </div>
+
+                  </form>     
+
+              </div>                     
+          </div>  
+      </div>
+  </div>
 </body>
 </html>
