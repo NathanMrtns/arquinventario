@@ -54,3 +54,67 @@ body {
   fill: #525151;
   padding: 20px;
 }
+
+#addNewBuildingBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#addNewBuildingBox > h2 {
+  padding-bottom: 10px;
+}
+
+#formAddNewBuilding > input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#formAddNewBuilding > div.form-group {
+  margin-top: 30px;
+}
+
+#homeBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#homeBox > h2 {
+  padding-bottom: 10px;
+}
+
+#homeBox > button#confirmButton {
+  margin-top: 20px;
+}
+
+#buildingBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#buildingBox > h2 {
+  margin-bottom: 20px;
+}
+
+#formBuilding > h4,h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#formBuilding > div.form-group {
+  margin-top: 30px;
+}

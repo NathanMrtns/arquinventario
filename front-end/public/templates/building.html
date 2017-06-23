@@ -7,88 +7,39 @@
 </head>
   
 <body>
-	 <div class="section"></div>
+  <div id='buildingBox' class='jumbotron'>
+    <h2>Detalhes Sobre o Patrimônio</h2>
 
-  <main>
-    <center>
-      <h5 class="indigo-text">Detalhes Sobre o Patrimônio</h5>
-      <div class="section"></div>
+    <form name="formBuilding" id="formBuilding" class="form-horizontal" enctype="multipart/form-data">
+      <h4>Nome</h4>
+      <h5>{{name}}</h5>
 
-      <div class="container">
-        <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <h4>Ano</h4>
+      <h5>{{year}}</h5>
 
-          <form class="col s12" method="post">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
-            </div>
+      <h4>Estilo Arquitetônico</h4>
+      <h5>{{style}}</h5>
 
-            <div class='row'>
-                <label>Nome</label>
-                <center>{{name}}</center>
-            </div>
+      <h4>História</h4>
+      <h5>{{history}}</h5>
 
-            <div class='row'>
-                <label>Ano</label>
-              	<center>{{year}}</center>
-            </div>
+      <h4>Descrição</h4>
+      <h5>{{description}}</h5>
 
+      <h4>Tipologia</h4>
+      <h5>{{tipology}}</h5>
 
-            <div class='row'>
-                <label>Estilo Arquitetônico</label>
-              	<center>{{style}}</center>
-            </div>
+      <h4>Fotos</h4>
+      <h5>Não disponíveis!</h5>
 
-            <div class='row'>
-                <label>História</label>
-              	<center>{{history}}</center>
-            </div>
+      <div class='form-group'>
+        <button type='button' ng-click="goToEditPage()" class='btn btn-primary'>Editar</button>
 
-            <div class='row'>
-                <label>Descrição</label>
-              	<center>{{description}}</center>
-            </div>
+        <button type='button' ng-click="delete()" name='btn_remove' class='btn btn-danger'>Excluir</button>
 
-            <div class='row'>
-                <label>Tipologia</label>
-                <center>{{tipology}}</center>
-            </div>
-
-            <div class='row'>
-                <label>Fotos</label>
-              	<center>Não disponíveis!</center>
-            </div>
-
-            <br/>
-
-            <center>
-              <div class='row'>
-                <button type='submit' ng-click="goToEditPage()" name='btn_edit' class='col s12 btn btn-large waves-effect red' style="border-radius: 5px;">Editar</button>
-              </div>
-            </center>
-
-            <center>
-              <div class='row'>
-                <button type='submit' ng-click="delete()" name='btn_remove' class='col s12 btn btn-large waves-effect red' style="border-radius: 5px;">Excluir</button>
-              </div>
-            </center>
-
-            <center>
-              <div class='row'>
-                <button type='submit' ng-click='goToHomePage()' name='btn_cancel' class='col s12 btn btn-large waves-effect red' style="border-radius: 5px;">Cancelar</button>
-              </div>
-            </center>
-
-          </form>
-        </div>
+        <button type='button' ng-click='goToHomePage()' class='btn btn-warning'>Cancelar</button>
       </div>
-    </center>
-
-    <div class="section"></div>
-    <div class="section"></div>
-
-  </main>
-
+    </form>
+  </div>
 </body>
-
 </html>

@@ -1,104 +1,33 @@
 <!DOCTYPE>
 <html ng-app="app">
 <meta charset="utf-8">
-
 <head>
   <title>Arquinventario</title>
 </head>
-  
 <body>
-  <div class="section"></div>
+  <div id='addNewBuildingBox' class='jumbotron'>
+    <h2 id='mainHeader'>Cadastrar Novo Patrimônio</h2>
 
-  <main>
-    <center>
-      <h5 class="indigo-text">Cadastrar Novo Patrimônio</h5>
-      <div class="section"></div>
+    <form name="formAddNewBuilding" id="formAddNewBuilding" class="form-horizontal" enctype="multipart/form-data" method="POST">
+      <input type="text" class="form-control" placeholder="Nome" name="name" id='name' ng-model="name">
 
-      <div class="container">
-        <div class="z-depth-1 grey lighten-4 row offset-s3" style="display: inline-block; border-radius: 5px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <input type="number" class="form-control" placeholder="Tempo" name='year' id='year' ng-model='year'>
 
-          <form class="col s12" method="post">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
-            </div>
+      <input type="text" class="form-control" placeholder="Estilo Arquitetônico" name='style' id='style' ng-model='style'>
 
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name="name" id='name' ng-model="name" />
-                <label>Nome</label>
-              </div>
-            </div>
+      <input type="text" class="form-control" placeholder="História" name='history' id='history' ng-model='history'>
 
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='year' id='year' ng-model='year' />
-                <label>Tempo</label>
-              </div>
-            </div>
+      <input type="text" class="form-control" placeholder="Descrição" name='description' id='description' ng-model='description'>
 
+      <input type="text" class="form-control" placeholder="Tipologia" name='tipology' id='tipology' ng-model='tipology'>
 
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='style' id='style' ng-model='style' />
-                <label>Estilo Arquitetônico</label>
-              </div>
-            </div>
+      <input type="text" class="form-control" placeholder="Fotos" name='photos' id='photos' ng-model='photos'>
 
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='history' id='history' ng-model='history' />
-                <label>História</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='description' id='description' ng-model='description' />
-                <label>Descrição</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='tipology' id='tipology' ng-model='tipology' />
-                <label>Tipologia</label>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='input-field'>
-                <input class='validate' type='text' name='photos' id='photos' ng-model='photos' />
-                <label>Fotos</label>
-              </div>
-            </div>
-
-            <br/>
-
-            <center>
-              <div class='row'>
-                <button type='submit' ng-click='submit()' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="border-radius: 5px;">Cadastrar</button>
-              </div>
-            </center>
-
-            <center>
-              <form action='http://localhost:3000/#!/home'>
-                <div class='row'>
-                  <button type='submit' ng-click='goToHomePage()' name='btn_cancel' class='col s12 btn btn-large waves-effect red' style="border-radius: 5px;">Cancelar</button>
-                </div>
-              </form>
-            </center>
-
-          </form>
-        </div>
+      <div class='form-group'>
+        <button type="button" ng-click='submit()' class="btn btn-primary">Cadastrar</button>
+        <button type="button" ng-click='goToHomePage()' class="btn btn-danger">Cancelar</button>
       </div>
-    </center>
-
-    <div class="section"></div>
-    <div class="section"></div>
-
-  </main>
-
+    </form>
+  </div>
 </body>
-
 </html>
