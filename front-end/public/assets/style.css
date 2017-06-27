@@ -118,3 +118,11 @@ body {
 #formBuilding > div.form-group {
   margin-top: 30px;
 }
+
+#linkToAddComplaint {
+  text-align: center;
+}
+
+#linkToAddComplaint > a {
+  color: red;
+}
