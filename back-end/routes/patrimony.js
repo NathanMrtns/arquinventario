@@ -10,6 +10,30 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:filterName', function(req,res){
+  patrimonyCtrl.getPatrimoniesByName(req,function(response){
+    res.json(response);
+  });
+})
+
+// router.get('/:filterYear', function(req,res){
+//   patrimonyCtrl.getPatrimoniesByYear(req,function(response){
+//     res.json(response);
+//   });
+// })
+
+// router.get('/:filterStyle', function(req,res){
+//   patrimonyCtrl.getPatrimoniesByStyle(req,function(response){
+//     res.json(response);
+//   });
+// })
+
+// router.get('/:filterTipology', function(req,res){
+//   patrimonyCtrl.getPatrimoniesByTipology(req,function(response){
+//     res.json(response);
+//   });
+// })
+
 router.post('/', function(req, res){
   patrimonyCtrl.createPatrimony(req, function(response){
     res.json(response);

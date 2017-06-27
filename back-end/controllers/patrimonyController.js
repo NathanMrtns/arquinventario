@@ -11,6 +11,44 @@ exports.getPatrimonies = function(callback){
   });
 };
 
+exports.getPatrimoniesByName = function(req,callback){
+  Patrimony.find({ "name": { "$regex": req.params.filterName, "$options": "i" } }, function(error, patrimonies){
+    if(error){
+      callback({error:'Não é possivel retornar patrimônios'});
+    }else{
+      callback(patrimonies);
+    }
+  })
+}
+
+// exports.getPatrimoniesByYear = function(req, callback){
+//   Patrimony.find({year: req.params.filterYear}, function(error, patrimonies){
+//     if(error){
+//       callback({error:'Não é possivel retornar patrimônios'});
+//     }else{
+//       callback(patrimonies);
+//     }
+//   })
+// }
+// exports.getPatrimoniesByStyle = function(req, callback){
+//   Patrimony.find({style: req.params.filterStyle}, function(error, patrimonies){
+//     if(error){
+//       callback({error:'Não é possivel retornar patrimônios'});
+//     }else{
+//       callback(patrimonies);
+//     }
+//   })
+// }
+// exports.getPatrimoniesByTipology = function(req, callback){
+//   Patrimony.find({tipology: req.params.filterTipology}, function(error, patrimonies){
+//     if(error){
+//       callback({error:'Não é possivel retornar patrimônios'});
+//     }else{
+//       callback(patrimonies);
+//     }
+//   })
+// }
+
 exports.createPatrimony = function(req, callback){
   var patrimony = new Patrimony({
     name:req.body.name,
