@@ -25,6 +25,8 @@ var mongoose = require('mongoose').connect(db_string);
 //Models
 require('./models/user');
 require('./models/patrimony');
+require('./models/report')
+require('./models/ticket')
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
