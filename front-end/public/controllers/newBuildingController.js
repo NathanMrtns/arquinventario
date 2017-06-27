@@ -52,7 +52,6 @@ app.controller('editBuildingController', ['$scope', '$http', '$state', function(
 	$scope.history = $state.params.history;
 	$scope.description = $state.params.description;
 	$scope.tipology = $state.params.tipology;
-	Materialize.updateTextFields();
 	
 	$scope.submit = function(){
 		data =  {
@@ -84,12 +83,4 @@ app.controller('editBuildingController', ['$scope', '$http', '$state', function(
 		$state.go("home");
 	}
 
-	updateFields();
-
 }])
-
-function updateFields(){
-	$("#name,#year,#style,#history,#description,#tipology").attr("placeholder", "some new value").trigger("md:updateinput");
-
-	Materialize.updateTextFields();
-}
