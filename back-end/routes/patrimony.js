@@ -10,8 +10,8 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/:filterName', function(req,res){
-  patrimonyCtrl.getPatrimoniesByName(req,function(response){
+router.get('/:searchFilter/:searchField/', function(req,res){
+  patrimonyCtrl.getPatrimoniesByFilter(req, function(response){
     res.json(response);
   });
 })

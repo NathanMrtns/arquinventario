@@ -11,43 +11,28 @@ exports.getPatrimonies = function(callback){
   });
 };
 
-exports.getPatrimoniesByName = function(req,callback){
-  Patrimony.find({ "name": { "$regex": req.params.filterName, "$options": "i" } }, function(error, patrimonies){
-    if(error){
-      callback({error:'Não é possivel retornar patrimônios'});
-    }else{
-      callback(patrimonies);
-    }
-  })
+exports.getPatrimoniesByFilter = function(req,callback){
+  var filter = req.params.searchFilter;
+  var search = req.params.searchField;
+  switch(filter) {
+    case "year":
+        console.log("in");
+        searchByYear(search, callback);
+        break;
+    case "style":
+        searchByStyle(search, callback);
+        break;
+    case "tipology":
+        searchByTipology(search, callback);
+        break;
+    case "address":
+        searchByAddress(search, callback);
+        break;
+    default:
+        searchByName(search, callback);
+        break;
+  }
 }
-
-// exports.getPatrimoniesByYear = function(req, callback){
-//   Patrimony.find({year: req.params.filterYear}, function(error, patrimonies){
-//     if(error){
-//       callback({error:'Não é possivel retornar patrimônios'});
-//     }else{
-//       callback(patrimonies);
-//     }
-//   })
-// }
-// exports.getPatrimoniesByStyle = function(req, callback){
-//   Patrimony.find({style: req.params.filterStyle}, function(error, patrimonies){
-//     if(error){
-//       callback({error:'Não é possivel retornar patrimônios'});
-//     }else{
-//       callback(patrimonies);
-//     }
-//   })
-// }
-// exports.getPatrimoniesByTipology = function(req, callback){
-//   Patrimony.find({tipology: req.params.filterTipology}, function(error, patrimonies){
-//     if(error){
-//       callback({error:'Não é possivel retornar patrimônios'});
-//     }else{
-//       callback(patrimonies);
-//     }
-//   })
-// }
 
 exports.createPatrimony = function(req, callback){
   var patrimony = new Patrimony({
@@ -98,3 +83,53 @@ exports.removePatrimony = function(req, callback){
     }
   });
 };
+
+function searchByYear(stringSearch, callback){
+    Patrimony.find({ year: parseInt(stringSearch) }, function(error, patrimonies){
+        if(error){
+          callback({error:'Não é possivel retornar patrimônios'});
+        }else{
+          callback(patrimonies);
+      }
+   })
+}
+
+function searchByStyle(stringSearch, callback){
+    Patrimony.find({ style : { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+        if(error){
+          callback({error:'Não é possivel retornar patrimônios'});
+        }else{
+          callback(patrimonies);
+      }
+   })
+}
+
+function searchByTipology(stringSearch, callback){
+    Patrimony.find({ tipology : { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+        if(error){
+          callback({error:'Não é possivel retornar patrimônios'});
+        }else{
+          callback(patrimonies);
+      }
+   })
+}
+
+function searchByAddress(stringSearch, callback){
+    Patrimony.find({ address : { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+        if(error){
+          callback({error:'Não é possivel retornar patrimônios'});
+        }else{
+          callback(patrimonies);
+      }
+   })
+}
+
+function searchByName(stringSearch, callback){
+    Patrimony.find({ name : { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+        if(error){
+          callback({error:'Não é possivel retornar patrimônios'});
+        }else{
+          callback(patrimonies);
+      }
+   })
+}
