@@ -2,8 +2,22 @@ body {
     background-color: white;
 }
 
+#arq {
+  max-width: 70%;
+}
+
+#image {
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+#icon {
+  max-width: 70%;
+  margin: 5%;
+}
+
 #loginbox {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 #loginbox > div:first-child {        
@@ -25,12 +39,15 @@ body {
 }
 
 .panel {    
-    background-color: transparent;
+    background-color: white;
+    width: 50%;
+    box-shadow: 0px 4px 8px #888888;
+    border-radius: 10px;
 }
 
 .panel-body {
     padding-top: 30px;
-    background-color: rgba(2555,255,255,.3);
+
 }
 
 #particles {
