@@ -78,6 +78,13 @@ body {
   margin-top: 30px;
 }
 
+#formAddNewBuilding > select {
+  width: 580px;
+  height:30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #homeBox {
   width: 700px;
   padding-right: 60px;

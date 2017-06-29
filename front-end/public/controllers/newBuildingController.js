@@ -10,6 +10,9 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 	$scope.tipology = "";
 	$scope.photos = "";
 
+	$scope.styles = ["Arte Deco", "Contemporâneo", "Eclético", "Protomoderno", "Moderno"];
+	$scope.types = ["Comercial Misto", "Institucional", "Religioso", "Residencial"];
+
 	$scope.submit = function(){
 		data =  {
 				"name":$scope.name,
