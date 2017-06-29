@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html ng-app="app">
+<meta charset="utf-8">
+<head>
+	<title>Arquinventario</title>
+</head>
+<body>
+	<div id='addNewComplaintBox' class='jumbotron'>
+		<h2>Denunciar Demolição Clandestina</h2>
+
+			<form id="formAddNewComplaint" class="form-horizontal" enctype="multipart/form-data" method="POST">
+				<input type="text" class="form-control" placeholder="Local" name="local" id='local' ng-model="local">
+
+				<input type="date" class="form-control" placeholder="Data" name="date" id='date' ng-model="date">
+
+				<input type="text" class="form-control" placeholder="Descrição" name="description" id='description' ng-model="description">
+
+				<div class='form-group'>
+					<button type="button" ng-click='submit()'class="btn btn-primary">Denunciar</button>
+					<button type="button" ng-click='goToHomePage()' class="btn btn-danger">Cancelar</button>
+	      		</div>
+			</form>
+	</div>
+</body>
+</html>

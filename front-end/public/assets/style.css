@@ -80,6 +80,7 @@ body {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  border-radius: 10px !important;
 }
 
 #addNewBuildingBox > h2 {
@@ -93,6 +94,13 @@ body {
 
 #formAddNewBuilding > div.form-group {
   margin-top: 30px;
+}
+
+#formAddNewBuilding > select {
+  width: 580px;
+  height:30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #homeBox {
@@ -134,4 +142,35 @@ body {
 
 #formBuilding > div.form-group {
   margin-top: 30px;
+}
+
+#linkToAddComplaint {
+  text-align: center;
+}
+
+#linkToAddComplaint > a {
+  color: red;
+}
+
+#addNewComplaintBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#addNewComplaintBox > h2 {
+  margin-bottom: 20px;
+}
+
+#formAddNewComplaint > div.form-group {
+  margin-top: 30px;
+}
+
+#formAddNewComplaint > input {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

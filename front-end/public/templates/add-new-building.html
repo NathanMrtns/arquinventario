@@ -11,15 +11,21 @@
     <form name="formAddNewBuilding" id="formAddNewBuilding" class="form-horizontal" enctype="multipart/form-data" method="POST">
       <input type="text" class="form-control" placeholder="Nome" name="name" id='name' ng-model="name">
 
+      <input type="text" class="form-control" placeholder="Endereço" name="address" id='address' ng-model="address">
+
       <input type="number" class="form-control" placeholder="Tempo" name='year' id='year' ng-model='year'>
 
-      <input type="text" class="form-control" placeholder="Estilo Arquitetônico" name='style' id='style' ng-model='style'>
+      <select ng-model='style' ng-options='style for style in styles'>
+        <option value=''>Estilo Arquitetônico</option>
+      </select>
 
       <input type="text" class="form-control" placeholder="História" name='history' id='history' ng-model='history'>
 
       <input type="text" class="form-control" placeholder="Descrição" name='description' id='description' ng-model='description'>
 
-      <input type="text" class="form-control" placeholder="Tipologia" name='tipology' id='tipology' ng-model='tipology'>
+      <select ng-model='tipology' ng-options='type for type in types'>
+        <option value=''>Tipologia</option>
+      </select>
 
       <input type="hidden" class="form-control" placeholder="Fotos" name='photos' id='photos' ng-model='photos'>
 
