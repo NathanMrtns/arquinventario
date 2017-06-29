@@ -52,8 +52,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl : "templates/building.html",
         controller: "buildingCtrl"
     })
-    .state('addComplaint', {
-        url: "/addComplaint",
+    .state('addNewComplaint', {
+        url: "/addNewComplaint",
         templateUrl: 'templates/add-new-complaint.html',
         controller:"addComplaintCtrl"
     })

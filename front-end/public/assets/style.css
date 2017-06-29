@@ -133,3 +133,26 @@ body {
 #linkToAddComplaint > a {
   color: red;
 }
+
+#addNewComplaintBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#addNewComplaintBox > h2 {
+  margin-bottom: 20px;
+}
+
+#formAddNewComplaint > div.form-group {
+  margin-top: 30px;
+}
+
+#formAddNewComplaint > input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
