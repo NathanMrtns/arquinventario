@@ -57,6 +57,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/add-new-complaint.html',
         controller:"addComplaintCtrl"
     })
+    .state('complaintsPage', {
+        url: "/complaintsPage",
+        templateUrl: "templates/complaints-page.html",
+        controller: "complaintsPageCtrl"
+    })
 });
 
 app.controller('AppCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
