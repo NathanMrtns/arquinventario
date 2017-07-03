@@ -13,7 +13,7 @@
 	  			<th>Lista de Denúncias</th>
 	  		</tr>
 	  		<tr ng-repeat='complaint in complaints'>
-	  			<td>{{complaint.title}}</td>
+	  			<td ng-click='goToComplaintPage(complaint)'>{{complaint.title}}</td>
 	  		</tr>
 		</table>
 	</div>
