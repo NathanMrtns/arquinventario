@@ -7,10 +7,11 @@
 </head>
   
 <body>
-  <div id='complaintBox' class='jumbotron'>
+  <div id='complaintsBox' class='jumbotron'>
     <h2>Detalhamento da Denúncia</h2>
 
     <form name="formBuilding" id="formBuilding" class="form-horizontal" enctype="multipart/form-data">
+      
       <h4>Title</h4>
       <h5>{{title}}</h5>
 
@@ -21,7 +22,7 @@
       <h5>{{description}}</h5>
 
       <div class='form-group'>
-        <button type='button' ng-click='goToHomePage()' class='btn btn-warning'>Voltar</button>
+        <button type='button' ng-click='goToComplaintsPage()' class='btn btn-warning'>Voltar</button>
       </div>
     </form>
   </div>

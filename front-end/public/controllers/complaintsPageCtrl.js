@@ -14,13 +14,13 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', function($sco
 
 	getAllComplaints();
 
-	goToComplaintPage = function(complaint) {
+	$scope.goToComplaintPage = function(complaint) {
 		var complaint_id = complaint._id;
 		var title = complaint.title;
 		var description = complaint.description;
 		var address = complaint.address;
 
-		console.log("test!");
+		console.log(complaint);
 
 		$state.go("complaint", complaint);
 	}
