@@ -68,6 +68,10 @@ app.controller('MenuCtrl', ['$scope', '$http', '$state', function($scope, $http,
     $scope.login = function(){
         $state.go("login");
     }
+
+    $scope.report = function(){
+        $state.go("addNewComplaint");
+    }
     
 }]);
 
