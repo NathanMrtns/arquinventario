@@ -19,6 +19,9 @@ var patrimonySchema = new mongoose.Schema({
   },
   tipology:{
     type:String
+  },
+  address:{
+    type:String
   }
 },{collection:'patrimony'});
 
