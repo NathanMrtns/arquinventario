@@ -113,10 +113,12 @@
 
     #wrapper.toggled {
         padding-left: 50px;
+        overflow:hidden;
     }
 
     #sidebar-wrapper {
         width: 50px;
+        overflow:hidden;
     }
 
     #wrapper.toggled #sidebar-wrapper {
