@@ -1,4 +1,5 @@
 var app = angular.module('app', ['ui.router']);
+app.value('serverURL', { value: 'http://localhost:8080' });
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
@@ -59,10 +60,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 });
 
-app.controller('MenuCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    
+app.controller('MenuCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
     $scope.addPatrimony = function(){
         $state.go("addNewBuilding");
+    }
+
+    $scope.patrimonies = function(){
+        $state.go("home");
     }
     
     $scope.login = function(){

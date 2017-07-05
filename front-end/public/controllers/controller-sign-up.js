@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('SignUpController', function($scope, $http, $state){
+app.controller('SignUpController', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state){
 	$scope.senhaRepetida = "";
 	$scope.senha ="";
 	$scope.nome = "";
@@ -13,7 +13,7 @@ app.controller('SignUpController', function($scope, $http, $state){
 			console.log($scope.senha + " " + $scope.nome + " " + $scope.email);
 			$http({
 				method: 'POST',
-				url: 'http://localhost:8080/user',
+				url: serverURL.value+'/user',
 				data: {name: $scope.nome, email: $scope.email, password: $scope.senha}
 			}).then(function(result){
 				console.log(result);
@@ -24,7 +24,6 @@ app.controller('SignUpController', function($scope, $http, $state){
 					$scope.error = result.data;
 				}
 			});
-		
 		}
 	}
-});
+}]);

@@ -1,13 +1,13 @@
 var app = angular.module('app');
 
-app.controller('loginCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
     $scope.email    = "";
     $scope.password = "";
 
     $scope.submit = function(){
         $http({
             method: 'POST',
-            url: 'http://localhost:8080/login',
+            url: serverURL.value+'/login',
             data: {
                 "email":$scope.email,
                 "password": $scope.password
@@ -16,7 +16,7 @@ app.controller('loginCtrl', ['$scope', '$http', '$state', function($scope, $http
             if(response.status == 200){
                 $state.go("home");
             } else {
-                alert('usuario invalido');
+                alert('Usuário inválido');
             }
         }, function error(response){
             console.log(response.status);

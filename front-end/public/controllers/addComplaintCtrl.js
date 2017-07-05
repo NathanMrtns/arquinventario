@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('addComplaintCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('addComplaintCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 
 	$scope.local = "";
 	$scope.date = "";
@@ -9,7 +9,7 @@ app.controller('addComplaintCtrl', ['$scope', '$http', '$state', function($scope
 	$scope.submit = function(){
 		$http({
 			method: 'POST',
-			url: 'http://localhost:8080/report',
+			url: serverURL.value + '/report',
 			data: {
 				"local": $scope.local,
 				"date": $scope.date,

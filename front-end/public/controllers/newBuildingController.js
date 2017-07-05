@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('newBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('newBuildingController', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 
 	$scope.name = "";
 	$scope.year = "";
@@ -25,7 +25,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 		
 		$http({
 			method: 'POST',
-			url: 'http://localhost:8080/patrimony',
+			url: serverURL.value+'/patrimony',
 			data: {
 				"name":$scope.name,
 				"year": $scope.year,
@@ -45,7 +45,7 @@ app.controller('newBuildingController', ['$scope', '$http', '$state', function($
 
 }]);
 
-app.controller('editBuildingController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('editBuildingController', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 	
 	var patrimony = $state.params;
 
@@ -68,7 +68,7 @@ app.controller('editBuildingController', ['$scope', '$http', '$state', function(
 		
 		$http({
 			method: 'PUT',
-			url: 'http://localhost:8080/patrimony/edit/'+patrimony._id,
+			url: serverURL.value+'/patrimony/edit/'+patrimony._id,
 			data: {
 				"name":$scope.name,
 				"year": $scope.year,

@@ -1,12 +1,12 @@
 var app = angular.module('app');
 
-app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 	$scope.patrimonies = "";
 
 	getAllPatrimonies = function() {
 		$http({
 			method: 'GET',
-			url: 'http://localhost:8080/patrimony',
+			url: serverURL.value+'/patrimony',
 		}).then(function(response){
 			$scope.patrimonies = response.data;
 		});
@@ -26,9 +26,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$state', function($scope, $http,
 		var history = patrimony.history;
 		var description = patrimony.description;
 		var tipology = patrimony.tipology;
-
-		// {pat_id:patrimony_id, name:name, year:year, style:style, history:history, 
-		// 	                   description:description, tipology:tipology}
 		$state.go("building", patrimony);
 	}
 }]);

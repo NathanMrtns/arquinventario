@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('buildingCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 
 	var patrimony = $state.params;
 	$scope.name = $state.params.name;
@@ -22,7 +22,7 @@ app.controller('buildingCtrl', ['$scope', '$http', '$state', function($scope, $h
 		console.log(patrimony);
 		$http({
 			method: 'DELETE',
-			url: 'http://localhost:8080/patrimony/'+patrimony._id,
+			url: serverURL.value + '/patrimony/'+patrimony._id,
 			data: {
 				"name":$scope.name,
 				"year": $scope.year,
