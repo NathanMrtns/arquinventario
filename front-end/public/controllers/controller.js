@@ -74,6 +74,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/complaint.html",
         controller: "complaintCtrl"
     })
+    .state('institutesInformationPage', {
+        url: "/institutesInformationPage",
+        templateUrl: "templates/institutes-information-page.html",
+        controller: "institutesInformationPageCtrl"
+    })
 });
 
 app.controller('MenuCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
