@@ -2,7 +2,8 @@ var app = angular.module('app');
 
 app.controller('addComplaintCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 
-	$scope.local = "";
+	$scope.title = "";
+	$scope.address = "";
 	$scope.date = "";
 	$scope.description = "";
 
@@ -11,7 +12,8 @@ app.controller('addComplaintCtrl', ['serverURL', '$scope', '$http', '$state', fu
 			method: 'POST',
 			url: serverURL.value + '/report',
 			data: {
-				"local": $scope.local,
+				"title": $scope.title,
+				"address": $scope.address,
 				"date": $scope.date,
 				"description": $scope.description
 			}

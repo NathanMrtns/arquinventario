@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }).state("editBuilding",{
         url:"/editBuilding",
         params: {
-            _id:null,
+            _id: null,
             name: null,
             year: null,
             style: null,
@@ -42,7 +42,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state("building",{
         url:"/building",
         params: {
-            _id:null,
+            _id: null,
             name: null,
             year: null,
             style: null,
@@ -57,6 +57,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/addNewComplaint",
         templateUrl: 'templates/add-new-complaint.html',
         controller:"addComplaintCtrl"
+    })
+    .state('complaintsPage', {
+        url: "/complaintsPage",
+        templateUrl: "templates/complaints-page.html",
+        controller: "complaintsPageCtrl"
+    })
+    .state('complaint', {
+        url: "/complaint",
+        params: {
+            _id: null,
+            title: null,
+            description: null,
+            address: null
+        },
+        templateUrl: "templates/complaint.html",
+        controller: "complaintCtrl"
     })
 });
 
