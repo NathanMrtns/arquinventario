@@ -2,7 +2,7 @@ var app = angular.module('app');
 
 app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
     $scope.viewDiv  = true;
-
+    $scope.$state = $state.current.name;
     $scope.email    = "";
     $scope.password = "";
 

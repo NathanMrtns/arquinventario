@@ -20,8 +20,12 @@
 </head>
 
 <body ng-controller="MenuCtrl as ctrl" style="background: url(assets/Background.png);">
-
-    <div id="wrapper" class="toggled">
+    <div id="login" ng-show="state === 'login'">
+        	<div ui-view></div>
+    </div>
+    
+    <div id="other" ng-show="state !== 'login'">
+        <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -43,22 +47,22 @@
                     <a href="" ng-click="report()">Denunciar</a>
                 </li>
                 <li>
-                    <a href="#">Denúncias</a>
+                    <a href="">Denúncias</a>
                 </li>
                 <li>
-                    <a href="#">Procurar</a>
+                    <a href="">Procurar</a>
                 </li>
                 <li>
-                    <a href="#">Usuários</a>
+                    <a href="">Usuários</a>
                 </li>
                 <li>
-                    <a href="#">Tickets</a>
+                    <a href="">Tickets</a>
                 </li>
                 <li>
-                    <a href="#">Órgãos</a>
+                    <a href="">Órgãos</a>
                 </li>
                 <li>
-                    <a href="#">Sobre</a>
+                    <a href="">Sobre</a>
                 </li>
 				<li>
                     <a href="" ng-click="login()" onClick="toggle()">Entrar</a>
@@ -80,6 +84,8 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+    </div>
+    
 
 </body>
 
@@ -93,7 +99,8 @@
     <script src="controllers/addComplaintCtrl.js"></script>
     <script src="controllers/complaintsPageCtrl.js"></script>
     <script src="controllers/complaintCtrl.js"></script>
-	<script>
+	
+    <script>
 		function toggle(){
 			$("#wrapper").toggleClass("toggled");
 			var menuClass = $("#wrapper").attr('class');

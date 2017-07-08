@@ -76,7 +76,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 });
 
-app.controller('MenuCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
+app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$state', function(serverURL,$rootScope , $scope, $http, $state) {
+
+    $scope.state = "default";
+
+    $rootScope.$on('$viewContentLoading', function(event, viewConfig)
+    {
+        $scope.state = $state.current.name;
+        //console.log($scope.state);
+    });
+
     $scope.addPatrimony = function(){
         $state.go("addNewBuilding");
     }
