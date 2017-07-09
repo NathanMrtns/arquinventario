@@ -86,17 +86,24 @@ app.controller('MenuCtrl', ['serverURL', '$scope', '$http', '$state', function(s
         $state.go("addNewBuilding");
     }
 
-    $scope.patrimonies = function(){
+    $scope.patrimonies = function() {
         $state.go("home");
     }
     
-    $scope.login = function(){
+    $scope.login = function() {
         $state.go("login");
     }
 
-    $scope.report = function(){
+    $scope.report = function() {
         $state.go("addNewComplaint");
     }
     
+    $scope.institutes = function() {
+        $state.go("institutesInformationPage");
+    }
+
+    $scope.listOfReports = function() {
+        $state.go("complaintsPage");
+    }
 }]);
 
