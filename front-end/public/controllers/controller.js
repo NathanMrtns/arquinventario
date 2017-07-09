@@ -74,6 +74,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/complaint.html",
         controller: "complaintCtrl"
     })
+    .state('institutesInformationPage', {
+        url: "/institutesInformationPage",
+        templateUrl: "templates/institutes-information-page.html",
+        controller: "institutesInformationPageCtrl"
+    })
 });
 
 app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$state', function(serverURL,$rootScope , $scope, $http, $state) {
@@ -90,17 +95,24 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
         $state.go("addNewBuilding");
     }
 
-    $scope.patrimonies = function(){
+    $scope.patrimonies = function() {
         $state.go("home");
     }
     
-    $scope.login = function(){
+    $scope.login = function() {
         $state.go("login");
     }
 
-    $scope.report = function(){
+    $scope.report = function() {
         $state.go("addNewComplaint");
     }
     
+    $scope.institutes = function() {
+        $state.go("institutesInformationPage");
+    }
+
+    $scope.listOfReports = function() {
+        $state.go("complaintsPage");
+    }
 }]);
 

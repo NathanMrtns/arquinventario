@@ -1,7 +1,6 @@
 <!DOCTYPE>
 <html ng-app="app">
 <head>
-
 	<!-- Scripts --> 
 	<script src="lib/angular/angular.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
@@ -47,7 +46,7 @@
                     <a href="" ng-click="report()">Denunciar</a>
                 </li>
                 <li>
-                    <a href="">Denúncias</a>
+                    <a href="" ng-click="listOfReports()">Denúncias</a>
                 </li>
                 <li>
                     <a href="">Procurar</a>
@@ -59,7 +58,7 @@
                     <a href="">Tickets</a>
                 </li>
                 <li>
-                    <a href="">Órgãos</a>
+                    <a href="#" ng-click="institutes()">Órgãos</a>
                 </li>
                 <li>
                     <a href="">Sobre</a>
@@ -82,11 +81,8 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
     </div>
-    
-
 </body>
 
 	<script src="controllers/controller.js"></script>
@@ -99,8 +95,9 @@
     <script src="controllers/addComplaintCtrl.js"></script>
     <script src="controllers/complaintsPageCtrl.js"></script>
     <script src="controllers/complaintCtrl.js"></script>
-	
-    <script>
+    <script src="controllers/institutesInformationPageCtrl.js"></script>
+
+	<script>
 		function toggle(){
 			$("#wrapper").toggleClass("toggled");
 			var menuClass = $("#wrapper").attr('class');
