@@ -9,6 +9,7 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.history = $state.params.history;
 	$scope.description = $state.params.description;
 	$scope.tipology = $state.params.tipology;
+	$scope.address = $state.params.address;
 
 	$scope.goToHomePage = function() {
 		$state.go("home");
@@ -22,15 +23,7 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 		console.log(patrimony);
 		$http({
 			method: 'DELETE',
-			url: serverURL.value + '/patrimony/'+patrimony._id,
-			data: {
-				"name":$scope.name,
-				"year": $scope.year,
-				"style": $scope.style,
-				"history": $scope.history,
-				"description": $scope.description,
-				"tipology": $scope.tipology
-			}
+			url: serverURL.value + '/patrimony/'+patrimony._id
 		}).then(function success(response){
             if(response.status == 200){
                 $state.go("home");

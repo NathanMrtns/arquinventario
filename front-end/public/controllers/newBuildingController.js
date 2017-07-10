@@ -8,32 +8,28 @@ app.controller('newBuildingController', ['serverURL', '$scope', '$http', '$state
 	$scope.history = "";
 	$scope.description = "";
 	$scope.tipology = "";
+	$scope.address = "";
 	$scope.photos = "";
 
 	$scope.styles = ["Arte Deco", "Contemporâneo", "Eclético", "Protomoderno", "Moderno"];
 	$scope.types = ["Comercial Misto", "Institucional", "Religioso", "Residencial"];
 
 	$scope.submit = function(){
+		console.log($scope.address);
 		data =  {
 				"name":$scope.name,
 				"year": $scope.year,
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,
-				"tipology": $scope.tipology
+				"tipology": $scope.tipology,
+				"address" : $scope.address
 			}
 		
 		$http({
 			method: 'POST',
 			url: serverURL.value+'/patrimony',
-			data: {
-				"name":$scope.name,
-				"year": $scope.year,
-				"style": $scope.style,
-				"history": $scope.history,
-				"description": $scope.description,
-				"tipology": $scope.tipology
-			}
+			data: data
 		}).then(function(response){
 			$state.go("home");
 		});
@@ -55,6 +51,7 @@ app.controller('editBuildingController', ['serverURL', '$scope', '$http', '$stat
 	$scope.history = $state.params.history;
 	$scope.description = $state.params.description;
 	$scope.tipology = $state.params.tipology;
+	$scope.address = $state.params.address;
 	
 	$scope.submit = function(){
 		data =  {
@@ -63,20 +60,14 @@ app.controller('editBuildingController', ['serverURL', '$scope', '$http', '$stat
 				"style": $scope.style,
 				"history": $scope.history,
 				"description": $scope.description,
-				"tipology": $scope.tipology
+				"tipology": $scope.tipology,
+				"address" : $scope.address
 			}
 		
 		$http({
 			method: 'PUT',
 			url: serverURL.value+'/patrimony/edit/'+patrimony._id,
-			data: {
-				"name":$scope.name,
-				"year": $scope.year,
-				"style": $scope.style,
-				"history": $scope.history,
-				"description": $scope.description,
-				"tipology": $scope.tipology
-			}
+			data: data
 		}).then(function(response){
 			$state.go("home");
 		});

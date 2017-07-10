@@ -34,7 +34,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             style: null,
             description: null,
             history: null,
-            tipology: null
+            tipology: null,
+            address:null
         },
         templateUrl : "templates/add-new-building.html",
         controller: "editBuildingController"
@@ -48,7 +49,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             style: null,
             description: null,
             history: null,
-            tipology: null
+            tipology: null,
+            address:null
         },
         templateUrl : "templates/building.html",
         controller: "buildingCtrl"
