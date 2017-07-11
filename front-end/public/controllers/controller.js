@@ -76,8 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('institutesInformationPage', {
         url: "/institutesInformationPage",
-        templateUrl: "templates/institutes-information-page.html",
-        controller: "institutesInformationPageCtrl"
+        templateUrl: "templates/institutes-information-page.html"
     })
 });
 
