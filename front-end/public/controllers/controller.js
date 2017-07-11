@@ -123,7 +123,7 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
         $state.go("complaintsPage");
     }
     
-        $scope.search = function(){
+    $scope.search = function(){
         $state.go("searchBuildings");
     }
 }]);
