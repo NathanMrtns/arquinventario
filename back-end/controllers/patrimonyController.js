@@ -41,7 +41,8 @@ exports.createPatrimony = function(req, callback){
     style:req.body.style,
     history:req.body.history,
     description:req.body.description,
-    tipology:req.body.tipology
+    tipology:req.body.tipology,
+    address:req.body.address
   });
 
   patrimony.save(function(err){
@@ -61,6 +62,7 @@ exports.updatePatrimony = function(req, callback){
       if(req.body.history) patrimony.history = req.body.history;
       if(req.body.description) patrimony.description = req.body.description;
       if(req.body.tipology) patrimony.tipology = req.body.tipology;
+      if(req.body.address) patrimony.address = req.body.address;
 
       patrimony.save(function(err, patrimony){
         if(err) callback({err:'Não foi possivel salvar'});

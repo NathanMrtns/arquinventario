@@ -25,7 +25,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url:"/addNewBuilding",
         templateUrl : "templates/add-new-building.html",
         controller: "newBuildingController"
-    }).state("editBuilding",{
+    })
+    .state("editBuilding",{
         url:"/editBuilding",
         params: {
             _id: null,
@@ -81,6 +82,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/institutes-information-page.html",
         controller: "institutesInformationPageCtrl"
     })
+    .state('searchBuildings', {
+        url: "/searchBuildings",
+        templateUrl: 'templates/search-for-buildings.html',
+        controller:"searchForBuildingsCtrl"
+    })
+
 });
 
 app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$state', function(serverURL,$rootScope , $scope, $http, $state) {
@@ -114,6 +121,10 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
 
     $scope.listOfReports = function() {
         $state.go("complaintsPage");
+    }
+    
+        $scope.search = function(){
+        $state.go("searchBuildings");
     }
 }]);
 
