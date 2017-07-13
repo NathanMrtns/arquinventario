@@ -4,7 +4,7 @@ var User = mongoose.model('User');
 exports.login = function(req, callback){
   User.findOne({ email: req.body.email }, function(error, user){
     if(error){
-      callback({error:'Erro de consulta'});
+      callback(404);
     }if(user){
       if(user.password == req.body.password){
         callback(200);
