@@ -11,11 +11,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/login.html',
         controller:"loginCtrl"
     })
-    .state("signUp", {
-        url: "/signUp",
-        templateUrl : "templates/sign-up.html",
-        controller: "SignUpController"
-    })
     .state("home",{
         url:"/home",
         templateUrl : "templates/home.html",
@@ -81,6 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/institutesInformationPage",
         templateUrl: "templates/institutes-information-page.html"
     })
+    
     .state('searchBuildings', {
         url: "/searchBuildings",
         templateUrl: 'templates/search-for-buildings.html',

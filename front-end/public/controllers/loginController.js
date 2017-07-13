@@ -22,20 +22,21 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         }).then(function success(response){
             if(response.status == 200){
                 $state.go("home");
-            } else {
-                alert('Usuário inválido');
+            }else{
+                $scope.error = "Credenciais inválidas!"
             }
         }, function error(response){
-            console.log(response.status);
+            $scope.error = "Credenciais inválidas!"
         });
     }
 
     $scope.signUp = function(){
+        console.log("entrou")
+
         if($scope.senha != $scope.senhaRepetida){
             $scope.error = "As senhas devem ser as mesmas!";
         }else{
             $scope.error = "";
-            console.log($scope.senha + " " + $scope.nome + " " + $scope.email2);
             $http({
                 method: 'POST',
                 url: serverURL.value+'/user',
@@ -43,8 +44,8 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
             }).then(function(result){
                 console.log(result);
                 if(result.status == 200){
-                    //localStorage.setItem('token', result.data.token );
-                    $state.go('home');
+                    $scope.viewDiv  = true;
+                    alert("Usuário cadastrado com sucesso!")
                 }else{
                     $scope.error = result.data;
                 }
