@@ -6,26 +6,20 @@
   
 <body>
  <div class="container" align="center">
- <div id="loginbox" class='jumbotron'>
+ <div id="searchBox" class='jumbotron'>
         <div class="row">                
 		<div class="text-center"> 	
 	</div>
             
 	<div class="row">                
-		<div class="text-center">
-			<img src="img/Arquinventario.png" id="arq">
-		</div>
+		<h2> Pesquisar Patrimônios no sistema
 	</div>
-	<br>
-            
-          <br>  
-<!-- como faz pra pegar o layout das outras telas? -->
+	<br>        
+    <br>  
+	
 	<p ng-show="error" style="color: red;">{{ error }}</p> 
 	<form name="form" id="form" class="form-horizontal" enctype="multipart/form-data">
-		<div id="divBusca">
-			<img src="img/lupa.png" width="25px" height="25px alt="Buscar..."/>  
-			<input type="text" ng-model="searchName" id="txtBusca" placeholder="Digite sua busca"/>
-		</div>
+		<input type="text" class="form-control" ng-model="searchName" id="txtBusca" placeholder="Digite sua busca"/>
 
 		<input type="radio" name="vehicle" value="Nome" ng-checked="isName" ng-click="checkName()" > Nome 
 		<input type="radio" name="vehicle" value="Endereco" ng-checked="isAddress" ng-click="checkAddress()"> Endereço 
@@ -36,19 +30,17 @@
 		<br>
 		<div class="form-group">
 			<div class="col-sm-12 controls text-center">
-				 <button type="button" class="col s12 btn btn-large waves-effect" style="width: 80px; height: 31px; background-color: #65cdf2;" ng-click="search()">Buscar</button
+				 <button type="button" class="btn btn-primary"" ng-click="search()">Buscar</button
 			</div>
 		</div>
-		<br>
+		<br><br><br>
 		<div ng-show="isSearch">
-			<th>Construções encontradas</th>
-
-			<div ng-repeat="patrimony in patrimonys_searched" ng-click="openPatrimony(patrimony)" href="#">
-				{{patrimony.name}}
-				{{patrimony.year}}
-				
-			</div>
-		</div>
+			<h2>Patrimônios Encontrados</h2>
+		<table class='table'>
+	  		<tr ng-repeat='patrimony in patrimonys_searched'>
+	  			<td ng-click='openPatrimony(patrimony)'><h3>{{patrimony.name}}</h3><td>
+	  		</tr>
+		</table>
 	</form>
 
 </body>

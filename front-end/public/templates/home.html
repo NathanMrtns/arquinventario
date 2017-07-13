@@ -7,13 +7,11 @@
 <body>
 	<div id='homeBox' class='jumbotron'>
 		<h2>Patrimônios Cadastrados</h2>
+		<br>
 
 		<table class='table'>
-	  		<tr>
-	  			<th>Nome do Patrimônio</th>
-	  		</tr>
 	  		<tr ng-repeat='patrimony in patrimonies'>
-	  			<td ng-click='goToBuildingPage(patrimony)'>{{patrimony.name}}</td>
+	  			<td ng-click='goToBuildingPage(patrimony)'><h3>{{patrimony.name}}</h3><td>
 	  		</tr>
 		</table>
 
