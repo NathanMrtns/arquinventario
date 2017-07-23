@@ -10,7 +10,8 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.description = $state.params.description;
 	$scope.tipology = $state.params.tipology;
 	$scope.address = $state.params.address;
-
+	$scope.informations = ["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
+	
 	$scope.goToHomePage = function() {
 		$state.go("home");
 	}
@@ -33,6 +34,16 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
         }, function error(response){
             console.log(response.status);
         });
+	}
+	
+
+	$scope.sendComment = function(){ 
+		//alert($scope.info);
+		$scope.informations.push($scope.info)
+		$scope.info = "";
+		
+		//console.log($scope.informations);
+		//$state.go("building");
 	}
 
 }]);
