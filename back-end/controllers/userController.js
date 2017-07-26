@@ -13,6 +13,7 @@ exports.getUsers = function(callback){
 
 exports.createUser = function(req, callback){
   var user = new User({
+    role:req.body.role,
     name:req.body.name,
     email:req.body.email,
     password:req.body.password
@@ -29,6 +30,9 @@ exports.updateUser = function(req, callback){
     if(error){
       res.json({error:'Usuário não encontrado!'});
     }else{
+      if(req.body.role){
+        user.role = req.body.role;
+      }
       if(req.body.name){
         user.name = req.body.name;
       }
