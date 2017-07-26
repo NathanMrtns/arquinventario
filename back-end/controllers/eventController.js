@@ -11,6 +11,16 @@ exports.getEvents = function(callback){
   });
 };
 
+exports.getEventsByPatrimony = function(req, callback){
+  Event.find({patrimony_id:req.params.patrimony_id}, function(error, events){
+    if(error){
+      callback({error:'Não é possivel retornar patrimônios'});
+    }else{
+      callback(events);
+    }
+  });
+};
+
 exports.createEvent = function(req, callback){
   var event = new Event({
     patrimony_id:req.body.patrimony_id,

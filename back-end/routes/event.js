@@ -10,6 +10,12 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:patrimony_id', function(req, res) {
+  eventCtrl.getEventsByPatrimony(req, function(response){
+    res.json(response);
+  });
+});
+
 router.post('/', function(req, res){
   eventCtrl.createEvent(req, function(response){
     res.json(response);
