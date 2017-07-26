@@ -14,6 +14,10 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', function($sco
 
 	getAllComplaints();
 
+	$scope.goToAddComplaintPage = function() {
+		$state.go("addNewComplaint");
+	}
+
 	$scope.goToComplaintPage = function(complaint) {
 		var complaint_id = complaint._id;
 		var title = complaint.title;
