@@ -2,7 +2,7 @@ var app = angular.module('app', ['ui.router']);
 app.value('serverURL', { value: 'http://localhost:8080' });
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/login");
 
     $stateProvider
     

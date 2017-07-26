@@ -2,7 +2,7 @@ var app = angular.module('app');
 
 app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
     $scope.viewDiv  = true;
-    $scope.$state = $state.current.name;
+    $scope.$state   = sessionStorage.getItem('role');
     $scope.email    = "";
     $scope.password = "";
 
@@ -22,10 +22,8 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         }).then(function success(response){
             if(response.status == 200){
                 $state.go("home");
-                if($scope.password == "admin@admin") {
+                if($scope.email == "admin@admin") {
                     sessionStorage.setItem('role', 'admin');
-                }else {
-                    sessionStorage.setItem('role', 'user');
                 }
             }else{
                 $scope.error = "Credenciais inválidas!"

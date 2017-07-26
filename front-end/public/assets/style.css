@@ -2,6 +2,12 @@ body {
     background-color: white;
 }
 
+#sobre{
+  font-size: 25px;
+  color: #ecf0f1;
+  margin-bottom: 40px;
+}
+
 #arq {
   max-width: 70%;
 }
@@ -81,6 +87,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   border-radius: 10px !important;
+  background: #ecf0f1;
 }
 
 #addNewBuildingBox > h2 {
@@ -111,6 +118,7 @@ body {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  background: #ecf0f1;
 }
 
 #homeBox > h2 {
@@ -128,7 +136,8 @@ body {
   text-align: center;
   margin-top: 20px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto;  
+  background: #ecf0f1;
 }
 
 #buildingBox > h2 {
@@ -160,6 +169,7 @@ body {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  background: #ecf0f1;
 }
 
 #addNewComplaintBox > h2 {
@@ -183,8 +193,8 @@ body {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  background: #ecf0f1;
 }
-
 
 #divBusca{
   background-color:#E0EEEE;
