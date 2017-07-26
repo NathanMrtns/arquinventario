@@ -22,6 +22,11 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         }).then(function success(response){
             if(response.status == 200){
                 $state.go("home");
+                if($scope.password == "admin@admin") {
+                    sessionStorage.setItem('role', 'admin');
+                }else {
+                    sessionStorage.setItem('role', 'user');
+                }
             }else{
                 $scope.error = "Credenciais inválidas!"
             }

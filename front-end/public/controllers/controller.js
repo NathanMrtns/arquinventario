@@ -87,7 +87,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$state', function(serverURL,$rootScope , $scope, $http, $state) {
 
-    $scope.state = "default";
+    $scope.state = 'default';
 
     $rootScope.$on('$viewContentLoading', function(event, viewConfig)
     {

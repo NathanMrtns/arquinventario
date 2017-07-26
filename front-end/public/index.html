@@ -6,6 +6,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
 	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
@@ -54,6 +55,17 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+                    <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div ui-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
     </div>
     
     <div id="other" ng-show="state !== 'login'">
@@ -96,10 +108,7 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
-    </div>
-    </div>
-
-            <!-- Page Content -->
+                    <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -110,6 +119,9 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
+    </div>
+    </div>
+
 
 </body>
 	<script src="controllers/controller.js"></script>
