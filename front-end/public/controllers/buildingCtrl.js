@@ -11,7 +11,22 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.tipology = $state.params.tipology;
 	$scope.address = $state.params.address;
 	$scope.informations = $state.params.additionalInformations;//["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
+	$scope.patImg;
 
+
+	$http({
+		method: 'GET',
+		url: serverURL.value + '/upload/image/'+$scope.name+'.jpg',
+		responseType: 'arraybuffer'
+	}).then(function success(response){
+        if(response.status == 200){
+			$scope.patImg = _arrayBufferToBase64(response.data);
+        } else {
+            alert('Houve um erro!');
+        }
+    }, function error(response){
+        console.log(response.status);
+    });
 
 	$scope.goToHomePage = function() {
 		$state.go("home");
@@ -22,7 +37,6 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	}
 
 	$scope.delete = function(){
-		console.log(patrimony);
 		$http({
 			method: 'DELETE',
 			url: serverURL.value + '/patrimony/'+patrimony._id
@@ -39,7 +53,6 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 
 
 	$scope.sendComment = function(){
-		//alert($scope.info);
 		$http({
 			method: 'PUT',
 			url: serverURL.value + '/patrimony/addInformation/'+patrimony._id,
@@ -64,3 +77,14 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	}
 
 }]);
+
+
+  function _arrayBufferToBase64(buffer) {
+    var binary = '';
+    var bytes = new Uint8Array(buffer);
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+  }

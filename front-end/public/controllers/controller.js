@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'ngFileUpload']);
 app.value('serverURL', { value: 'http://localhost:8080' });
 
 app.config(function($stateProvider, $urlRouterProvider) {
