@@ -1,11 +1,11 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'ngFileUpload']);
 app.value('serverURL', { value: 'http://localhost:8080' });
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/home");
 
     $stateProvider
-    
+
     .state('login', {
         url: "/login",
         templateUrl: 'templates/login.html',
@@ -46,7 +46,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             description: null,
             history: null,
             tipology: null,
-            address:null
+            address:null,
+            additionalInformations: null
         },
         templateUrl : "templates/building.html",
         controller: "buildingCtrl"
@@ -76,7 +77,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/institutesInformationPage",
         templateUrl: "templates/institutes-information-page.html"
     })
-    
+
     .state('searchBuildings', {
         url: "/searchBuildings",
         templateUrl: 'templates/search-for-buildings.html',
@@ -102,7 +103,7 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.patrimonies = function() {
         $state.go("home");
     }
-    
+
     $scope.login = function() {
         $state.go("login");
     }
@@ -110,7 +111,7 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.report = function() {
         $state.go("addNewComplaint");
     }
-    
+
     $scope.institutes = function() {
         $state.go("institutesInformationPage");
     }
@@ -118,9 +119,8 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.listOfReports = function() {
         $state.go("complaintsPage");
     }
-    
+
     $scope.search = function(){
         $state.go("searchBuildings");
     }
 }]);
-

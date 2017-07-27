@@ -133,7 +133,13 @@ hr {
 }
 
 #homeBox > h2 {
+  text-align: center;
   padding-bottom: 10px;
+}
+
+table tr:hover {
+  background: #d6d6d6;
+  cursor:pointer
 }
 
 #homeBox > button#confirmButton {
@@ -200,7 +206,6 @@ hr {
   width: 700px;
   padding-right: 60px;
   padding-left: 60px;
-  text-align: center;
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
@@ -213,6 +218,20 @@ hr {
   border-radius:10px;
   width:350px;
   height:32px;
+}
+
+#complaintsBox > table tr:hover {
+  background: #d6d6d6;
+  cursor:pointer
+}
+
+#searchBox {
+  width: 700px;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #txtBusca{

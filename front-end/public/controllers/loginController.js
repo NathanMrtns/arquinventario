@@ -10,7 +10,7 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
     $scope.senha         = "";
     $scope.nome          = "";
     $scope.email2        = "";
-    $scope.$userRole      = sessionStorage.getItem('role');
+    $scope.$userRole     = sessionStorage.getItem('role');
 
     $scope.login = function(){
         $http({
@@ -30,6 +30,10 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         }, function error(response){
             $scope.error = "Credenciais inválidas!"
         });
+    }
+
+    $scope.logout = function(){
+
     }
 
     $scope.signUp = function(){

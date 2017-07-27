@@ -72,6 +72,20 @@ exports.updatePatrimony = function(req, callback){
   });
 };
 
+exports.addAdditionalInformations = function(req, callback){
+  Patrimony.findOne({_id:req.params.id}, function(error, patrimony){
+    if(error){
+      res.json({error:'Patrimônimo não encontrado'});
+    }else{
+      patrimony.additionalInformations.push(req.body.addInfo);
+      patrimony.save(function(err, patrimony){
+        if(err) callback({err:'Não foi possível adicionar a informação'});
+        else callback(patrimony);
+      });
+    }
+  });
+};
+
 exports.removePatrimony = function(req, callback){
   Patrimony.findOne({_id:req.params.id}, function(error, patrimony){
     if(error){

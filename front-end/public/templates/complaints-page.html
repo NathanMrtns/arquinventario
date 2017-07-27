@@ -6,14 +6,10 @@
 </head>
 <body>
 	<div id='complaintsBox' class='jumbotron'>
-		<h2>Lista de Denúncias</h2>
-
+		<h2>Denúncias</h2>
 		<table class='table'>
-	  		<tr>
-	  			<th>Lista de Denúncias</th>
-	  		</tr>
 	  		<tr ng-repeat='complaint in complaints'>
-	  			<td ng-click='goToComplaintPage(complaint)'>{{complaint.title}}</td>
+	  			<td ng-click='goToComplaintPage(complaint)'><h3>{{complaint.title}}</h3></td>
 	  		</tr>
 		</table>
 	</div>

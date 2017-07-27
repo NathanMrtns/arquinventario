@@ -22,6 +22,9 @@ var patrimonySchema = new mongoose.Schema({
   },
   address:{
     type:String
+  },
+  additionalInformations:{
+    type:[String]
   }
 },{collection:'patrimony'});
 

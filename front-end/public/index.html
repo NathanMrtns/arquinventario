@@ -1,16 +1,17 @@
 <!DOCTYPE>
 <html ng-app="app">
 <head>
-    <!-- Scripts --> 
-    <script src="lib/angular/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Scripts --> 
+	<script src="lib/angular/angular.js"></script>
+    <script src="lib/ng-file-upload/ng-file-upload-all.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="assets/style.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css">-->
+	<link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/login.css">
     <link rel="stylesheet" href="assets/simple-sidebar.css">
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
@@ -58,7 +59,7 @@
                     <a href="" onClick="toggle()">Usuários</a>
                 </li>
                 <li>
-                    <a href="" onClick="toggle()">Sair</a>
+                    <a href="" ng-click="logout()" onClick="toggle()">Sair</a>
                 </li>
                 </div>
 
@@ -94,10 +95,13 @@
 
                 <div ng-show="userRole === 'admin'">
                 <li>
-                    <a href="" ng-click="listOfReports()">Denúncias</a>
+                    <a href="" ng-click="listOfReports()" onClick="toggle()">Denúncias</a>
                 </li>
                 <li>
                     <a href="" ng-click="addPatrimony()" onClick="toggle()">Criar Patrimônio</a>
+                </li>                
+                <li>
+                    <a href="" ng-click="patrimonies()" onClick="toggle()">Patrimônios</a>
                 </li>
                 <hr>
                 <li>
@@ -118,7 +122,7 @@
                     <a href="" onClick="toggle()">Usuários</a>
                 </li>
                 <li>
-                    <a href="" onClick="toggle()">Sair</a>
+                    <a href="" ng-click="logout()" onClick="toggle()">Sair</a>
                 </li>
                 </div>
             </ul>
@@ -149,6 +153,7 @@
     <script src="controllers/searchForBuildingsCtrl.js"></script>
     <script src="controllers/complaintsPageCtrl.js"></script>
     <script src="controllers/complaintCtrl.js"></script>
+    <script src="controllers/uploadService.js"></script>
 
     <script>
         function toggle(){
