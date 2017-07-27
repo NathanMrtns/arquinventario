@@ -6,7 +6,7 @@ app.controller('ticketsPageCtrl', ['$scope', '$http', '$state', function($scope,
 	getAllTickets = function() {
 		$http({
 			method: 'GET',
-			url: 'http://localhost:8080/ticket'
+			url: serverURL.value + '/ticket'
 		}).then(function(response){
 			$scope.tickets = response.data;
 		}) 
