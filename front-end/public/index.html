@@ -37,25 +37,58 @@
                     <a href="" ng-click="report()" onClick="toggle()">Denunciar</a>
                 </li>
                 <li>
-                    <a href="" ng-click="login()" onClick="toggle()">Entrar</a>
-                </li>
-                <li>
-                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
-                </li>
-                <li>
                     <a href="" ng-click="patrimonies()" onClick="toggle()">Patrimônios</a>
                 </li>
+                <hr>
                 <li>
                     <a href="" ng-click="search()" onClick="toggle()">Procurar</a>
                 </li>
                 <li>
                     <a href="" onClick="toggle()">Sobre</a>
                 </li>
+                <hr>
+                <li>
+                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
+                </li>
                 <li>
                     <a href="" onClick="toggle()">Tickets</a>
                 </li>
+                <hr>
                 <li>
                     <a href="" onClick="toggle()">Usuários</a>
+                </li>
+                <li>
+                    <a href="" onClick="toggle()">Sair</a>
+                </li>
+                </div>
+
+                <div ng-show="userRole === null">
+                <li>
+                    <a href="" ng-click="report()" onClick="toggle()">Denunciar</a>
+                </li>
+                <li>
+                    <a href="" ng-click="patrimonies()" onClick="toggle()">Patrimônios</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="" ng-click="search()" onClick="toggle()">Procurar</a>
+                </li>
+                <li>
+                    <a href="" onClick="toggle()">Sobre</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
+                </li>
+                <li>
+                    <a href="" onClick="toggle()">Tickets</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="" onClick="toggle()">Usuários</a>
+                </li>
+                <li>
+                    <a href="" ng-click="login()" onClick="toggle()">Entrar</a>
                 </li>
                 </div>
 
@@ -64,22 +97,28 @@
                     <a href="" ng-click="listOfReports()">Denúncias</a>
                 </li>
                 <li>
-                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
-                </li>
-                <li>
                     <a href="" ng-click="addPatrimony()" onClick="toggle()">Criar Patrimônio</a>
                 </li>
+                <hr>
                 <li>
                     <a href="" ng-click="search()" onClick="toggle()">Procurar</a>
                 </li>
                 <li>
                     <a href="" onClick="toggle()">Sobre</a>
                 </li>
+                <hr>
+                <li>
+                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
+                </li>
                 <li>
                     <a href="" onClick="toggle()">Tickets</a>
                 </li>
+                <hr>
                 <li>
                     <a href="" onClick="toggle()">Usuários</a>
+                </li>
+                <li>
+                    <a href="" onClick="toggle()">Sair</a>
                 </li>
                 </div>
             </ul>
@@ -117,9 +156,11 @@
             var menuClass = $("#wrapper").attr('class');
             if(menuClass == "toggled"){
                 $('li').show();
+                $('hr').show();
             
             }else{
                 $('li').not(":eq(0)").hide();
+                $('hr').hide();
             }
         }
     </script>

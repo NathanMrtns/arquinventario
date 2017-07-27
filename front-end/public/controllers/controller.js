@@ -92,6 +92,7 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $rootScope.$on('$viewContentLoading', function(event, viewConfig)
     {
         $scope.state = $state.current.name;
+        $scope.userRole = sessionStorage.getItem('role');
     });
 
     $scope.addPatrimony = function(){

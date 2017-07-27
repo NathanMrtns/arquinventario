@@ -10,7 +10,7 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
     $scope.senha         = "";
     $scope.nome          = "";
     $scope.email2        = "";
-    $scope.userRole      = "";
+    $scope.$userRole      = sessionStorage.getItem('role');
 
     $scope.login = function(){
         $http({
@@ -23,8 +23,6 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         }).then(function success(response){
             if(response.status == 200){
                 sessionStorage.setItem("role", response.data);
-                $scope.userRole = sessionStorage.getItem('role');
-                alert($scope.userRole);
                 $state.go("home");
             }else{
                 $scope.error = "Credenciais inválidas!"
@@ -35,8 +33,6 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
     }
 
     $scope.signUp = function(){
-        console.log("entrou")
-
         if($scope.senha != $scope.senhaRepetida){
             $scope.error = "As senhas devem ser as mesmas!";
         }else{

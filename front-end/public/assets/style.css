@@ -2,11 +2,22 @@ body {
     background-color: white;
 }
 
+hr {
+  width:93%;
+  margin-left: 10px;
+  border: none;
+  height: 2px;
+  /* Set the hr color */
+  color:#1a2733; /* old IE */
+  background-color: #1a2733; /* Modern Browsers */
+}
+
 #sobre{
   font-size: 25px;
   color: #ecf0f1;
   margin-bottom: 40px;
 }
+
 
 #arq {
   max-width: 70%;
