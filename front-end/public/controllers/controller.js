@@ -134,5 +134,9 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.addNewTicket = function(){
         $state.go("addNewTicket");
     }
+
+    $scope.tickets = function(){
+        $state.go("ticketsPage");
+    }
 }]);
 
