@@ -32,7 +32,7 @@
                         </div>
                     </a>
                 </li>
-                <div ng-show="state !== 'admin'">
+                <div ng-show="userRole === 'comum'">
                 <li>
                     <a href="" ng-click="report()" onClick="toggle()">Denunciar</a>
                 </li>
@@ -59,7 +59,7 @@
                 </li>
                 </div>
 
-                <div ng-show="state === 'admin'">
+                <div ng-show="userRole === 'admin'">
                 <li>
                     <a href="" ng-click="listOfReports()">Denúncias</a>
                 </li>
@@ -117,6 +117,7 @@
             var menuClass = $("#wrapper").attr('class');
             if(menuClass == "toggled"){
                 $('li').show();
+            
             }else{
                 $('li').not(":eq(0)").hide();
             }
