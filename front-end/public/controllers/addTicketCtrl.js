@@ -5,6 +5,8 @@ app.controller('addTicketCtrl', ['serverURL', '$scope', '$http', '$state', funct
 	$scope.address = "";
 	$scope.description = "";
 
+	$scope.urgencyLevels = ["Baixo", "Médio", "Alto"];
+
 	$scope.submit = function() {
 		$http({
 			method: 'POST',
