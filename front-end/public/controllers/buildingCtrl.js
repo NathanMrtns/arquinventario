@@ -10,8 +10,9 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.description = $state.params.description;
 	$scope.tipology = $state.params.tipology;
 	$scope.address = $state.params.address;
-	$scope.informations = ["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
-	
+	$scope.informations = $state.params.additionalInformations;//["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
+
+
 	$scope.goToHomePage = function() {
 		$state.go("home");
 	}
@@ -35,13 +36,29 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
             console.log(response.status);
         });
 	}
-	
 
-	$scope.sendComment = function(){ 
+
+	$scope.sendComment = function(){
 		//alert($scope.info);
-		$scope.informations.push($scope.info)
-		$scope.info = "";
-		
+		$http({
+			method: 'PUT',
+			url: serverURL.value + '/patrimony/addInformation/'+patrimony._id,
+			data: {"addInfo":$scope.info}
+
+			}).then(function success(response){
+            if(response.status == 200){
+                $scope.informations = response.data.additionalInformations;
+								console.log(response);
+            } else {
+                alert('Houve um erro!');
+            }
+        }, function error(response){
+            console.log(response.status);
+        });
+
+//				$scope.informations.push($scope.info)
+				$scope.info = "";
+
 		//console.log($scope.informations);
 		//$state.go("building");
 	}

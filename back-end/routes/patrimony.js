@@ -28,6 +28,12 @@ router.put('/edit/:id', function(req, res){
   });
 });
 
+router.put('/addInformation/:id', function(req, res){
+  patrimonyCtrl.addAdditionalInformations(req, function(response){
+    res.json(response);
+  });
+});
+
 router.delete('/:id', function(req, res){
   patrimonyCtrl.removePatrimony(req, function(response){
     res.json(response);
