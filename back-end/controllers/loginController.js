@@ -7,12 +7,12 @@ exports.login = function(req, callback){
       callback(404);
     }if(user){
       if(user.password == req.body.password){
-        callback(200);
+        callback({"user":user, "status":200});
       }else{
-        callback(401);
+        callback({"status":401});
       }
     }else{
-      callback(404);
+      callback({"status":404});
     }
   });
 };
