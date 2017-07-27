@@ -86,6 +86,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/add-new-ticket.html',
         controller:"addTicketCtrl"
     })
+    .state('ticketsPage', {
+        url: "/ticketsPage",
+        templateUrl: 'templates/tickets-page.html',
+        controller:"ticketsPageCtrl"
+    })
 
 });
 

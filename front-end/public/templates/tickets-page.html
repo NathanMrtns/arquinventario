@@ -7,6 +7,15 @@
 <body>
 	<div id='ticketsBox' class='jumbotron'>
 		<h2>Lista de Tickets</h2>
+
+		<table class='table'>
+	  		<tr>
+	  			<th>Lista de Tickets</th>
+	  		</tr>
+	  		<tr ng-repeat='complaint in complaints'>
+	  			<td ng-click='goToComplaintPage(complaint)'>{{complaint.title}}</td>
+	  		</tr>
+		</table>
 	</div>
 </body>
 </html>
