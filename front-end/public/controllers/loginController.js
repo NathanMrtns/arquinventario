@@ -32,10 +32,6 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
         });
     }
 
-    $scope.logout = function(){
-
-    }
-
     $scope.signUp = function(){
         if($scope.senha != $scope.senhaRepetida){
             $scope.error = "As senhas devem ser as mesmas!";

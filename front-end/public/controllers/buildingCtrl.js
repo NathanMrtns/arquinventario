@@ -12,7 +12,7 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.address = $state.params.address;
 	$scope.informations = $state.params.additionalInformations;//["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
 	$scope.patImg;
-
+	$scope.userRole = sessionStorage.getItem('role');
 
 	$http({
 		method: 'GET',

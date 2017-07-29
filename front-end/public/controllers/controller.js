@@ -77,11 +77,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/institutesInformationPage",
         templateUrl: "templates/institutes-information-page.html"
     })
-
     .state('searchBuildings', {
         url: "/searchBuildings",
         templateUrl: 'templates/search-for-buildings.html',
         controller:"searchForBuildingsCtrl"
+    })
+    .state('addNewTicket', {
+        url: "/addNewTicket",
+        templateUrl: 'templates/add-new-ticket.html',
+        controller:"addTicketCtrl"
+    })
+    .state('ticketsPage', {
+        url: "/ticketsPage",
+        templateUrl: 'templates/tickets-page.html',
+        controller:"ticketsPageCtrl"
     })
 
 });
@@ -122,5 +131,18 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
 
     $scope.search = function(){
         $state.go("searchBuildings");
+    }
+    
+    $scope.addNewTicket = function(){
+        $state.go("addNewTicket");
+    }
+
+    $scope.tickets = function(){
+        $state.go("ticketsPage");
+    }
+
+    $scope.logout = function(){
+        sessionStorage.clear();
+        $state.go("home");
     }
 }]);
