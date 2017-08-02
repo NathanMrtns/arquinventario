@@ -267,3 +267,8 @@ table tr:hover {
   margin-right: auto;
   margin-left: auto;
 }
+
+.short-map{
+  width: 400px;
+  height: 400px;
+}

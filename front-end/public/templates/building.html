@@ -41,7 +41,9 @@
         <button type='button' ng-click="delete()" name='btn_remove' class='btn btn-danger'>Excluir</button>
       </div>
     </form>
-    
+  <br>
+  <h4>Localização</h4>
+      <map ng-transclude class="short-map" center="map.center" zoom="10"> </map>
 	<h4>Informações Adicionais</h4>
 
 	<div ng-repeat="info in informations">
