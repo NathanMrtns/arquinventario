@@ -279,3 +279,15 @@ table tr:hover {
     margin: 0 auto;
     /* margin-left: auto; margin-right: auto; */
 }
+
+#pendingTicketsBox button#acceptButton {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#pendingTicketsBox button#refuseButton {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
