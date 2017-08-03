@@ -19,10 +19,71 @@
     <title>Arquinventario</title>
 </head>
 
-<body ng-controller="MenuCtrl as ctrl" style="background: url(assets/Background.png);">
-    <div id="other">
-        <div id="wrapper" class="toggled">
+<body ng-controller="MenuCtrl as ctrl" style="background: url(assets/Background.png);">        
+<!-- Sidebar -->
+    <div id="wrapper2" ng-show="userRole !== 'admin'">
+        <div id="sidebar-wrapper2">
+            <ul class="sidebar-nav2">
+                <div ng-show="userRole === 'comum'">
+                <img src="img/Arquinventario.png" style="float:left; padding-top:15px; padding-left:15px; height:5%;"/>
+                <li>
+                    <a href="" ng-click="report()" >Denunciar</a>
+                </li>
+                <li>
+                    <a href="" ng-click="patrimonies()" >Patrimônios</a>
+                </li>
+                <li>
+                    <a href="" ng-click="search()" >Procurar</a>
+                </li>
+                <li>
+                    <a href="" >Sobre</a>
+                </li>
+                <li>
+                    <a href="" ng-click="institutes()" >Seções</a>
+                </li>
+                <li>
+                    <a href="" ng-click="addNewTicket()">Tickets</a>
+                </li>
+                <li>
+                    <a href="" >Usuários</a>
+                </li>
+                <li>
+                    <a href="" ng-click="logout()" >Sair</a>
+                </li>
+                </div>
 
+                <div ng-show="userRole === null">
+                <img src="img/Arquinventario.png" style="float:left; padding-top:15px; padding-left:15px; height:5%;"/>
+                <li>
+                    <a href="" ng-click="report()" >Denunciar</a>
+                </li>
+                <li>
+                    <a href="" ng-click="patrimonies()" >Patrimônios</a>
+                </li>
+                <li>
+                    <a href="" ng-click="search()" >Procurar</a>
+                </li>
+                <li>
+                    <a href="" >Sobre</a>
+                </li>
+                <li>
+                    <a href="" ng-click="institutes()" >Seções</a>
+                </li>
+                <li>
+                    <a href="" ng-click="addNewTicket()">Tickets</a>
+                </li>
+                <li>
+                    <a href="" >Usuários</a>
+                </li>
+                <li>
+                    <a href="" ng-click="login()" >Entrar</a>
+                </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div id="wrapper" class="toggled" ng-show="userRole === 'admin'">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -33,67 +94,8 @@
                         </div>
                     </a>
                 </li>
-                <div ng-show="userRole === 'comum'">
-                <li>
-                    <a href="" ng-click="report()" onClick="toggle()">Denunciar</a>
-                </li>
-                <li>
-                    <a href="" ng-click="patrimonies()" onClick="toggle()">Patrimônios</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" ng-click="search()" onClick="toggle()">Procurar</a>
-                </li>
-                <li>
-                    <a href="" onClick="toggle()">Sobre</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
-                </li>
-                <li>
-                    <a href="" ng-click="addNewTicket()">Tickets</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" onClick="toggle()">Usuários</a>
-                </li>
-                <li>
-                    <a href="" ng-click="logout()" onClick="toggle()">Sair</a>
-                </li>
-                </div>
-
-                <div ng-show="userRole === null">
-                <li>
-                    <a href="" ng-click="report()" onClick="toggle()">Denunciar</a>
-                </li>
-                <li>
-                    <a href="" ng-click="patrimonies()" onClick="toggle()">Patrimônios</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" ng-click="search()" onClick="toggle()">Procurar</a>
-                </li>
-                <li>
-                    <a href="" onClick="toggle()">Sobre</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" ng-click="institutes()" onClick="toggle()">Seções</a>
-                </li>
-                <li>
-                    <a href="" ng-click="addNewTicket()">Tickets</a>
-                </li>
-                <hr>
-                <li>
-                    <a href="" onClick="toggle()">Usuários</a>
-                </li>
-                <li>
-                    <a href="" ng-click="login()" onClick="toggle()">Entrar</a>
-                </li>
-                </div>
-
-                <div ng-show="userRole === 'admin'">
+                
+                <div>
                 <li>
                     <a href="" ng-click="listOfReports()" onClick="toggle()">Denúncias</a>
                 </li>
@@ -147,7 +149,6 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-    </div>
 </body>
     <script src="controllers/controller.js"></script>
     <script src="controllers/newBuildingController.js"></script>
