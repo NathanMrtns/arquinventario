@@ -12,6 +12,10 @@ var ticketSchema = new mongoose.Schema({
   address : {
     type:String,
     required:true
+  },
+  status: {
+    type:String,
+    required:true
   }
 },{collection:'ticket'});
 
