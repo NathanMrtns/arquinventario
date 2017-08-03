@@ -272,3 +272,10 @@ table tr:hover {
   width: 400px;
   height: 400px;
 }
+
+.col-center-block {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    /* margin-left: auto; margin-right: auto; */
+}
