@@ -51,7 +51,7 @@
         Foto:
         <br>
         <input type="file" ngf-select ng-model="file" name="file"    
-             accept="image/*" ngf-max-size="2MB" required
+             accept="image/*" ngf-max-size="2MB"
              ngf-model-invalid="errorFile">
       </div> 
       <input type="hidden" class="form-control" placeholder="Fotos" name='photos' id='photos' ng-model='photos'>
@@ -61,15 +61,7 @@
         <button type="button" ng-click='goToHomePage()' class="btn btn-danger">Cancelar</button>
       </div>
     </form>
-<!--
-      <div class="form-group">
-        <h4>Upload on file select</h4>
-        <br>Photo:
-        <input type="file" ngf-select ng-model="file" name="file"    
-             accept="image/*" ngf-max-size="2MB" required
-             ngf-model-invalid="errorFile">
-        <button ng-click="upload(file)">Submit</button>
-      </div>  -->
+
   </div>
 </body>
 </html>

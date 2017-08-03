@@ -9,6 +9,12 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:status', function(req, res) {
+  ticketCtrl.getTicketsByStatus(req, function(response){
+    res.json(response);
+  });
+});
+
 router.post('/', function(req, res){
   ticketCtrl.createTicket(req, function(response){
     res.json(response);

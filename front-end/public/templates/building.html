@@ -53,6 +53,11 @@
 
         <button type='button' ng-click="delete()" name='btn_remove' class='btn btn-danger'>Excluir</button>
       </div>
+  <br>
+  <h4>Localização</h4>
+      <map ng-transclude class="short-map col-center-block" center="map.center" zoom="15"> 
+        <marker position="marker.position" decimals="marker.decimals" options="marker.options"></marker>
+      </map>
     </form>
     
   <h2><strong>Informações adicionais</strong></h2>
