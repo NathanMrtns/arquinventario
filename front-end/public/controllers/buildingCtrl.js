@@ -13,6 +13,8 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	$scope.address = $state.params.address;
 	$scope.informations = $state.params.additionalInformations;//["info1", "info2", "info3"]; //= state.params.algo que tiver no back;
 	$scope.patImg;
+	$scope.marker;
+	$scope.infowindow;
 	$scope.info = "";
 	$scope.userRole = sessionStorage.getItem('role');
 	$scope.googleMapsUrl= "https://maps.googleapis.com/maps/api/js?key=AIzaSyAkkCmNJhGmWTkcYRCwxTkyNy4Mx2PCnh0";
@@ -81,18 +83,30 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
             if (status == google.maps.GeocoderStatus.OK) {
                 callback(results[0].geometry.location);
             } else {
-                console.log("Geocode was not successful for the following reason: " + status);
+				console.log("Geocode was not successful for the following reason: " + status);
+				callback(status);
             }
         });
-    };
+	};
+	
+	geocodeAddress($scope.address+",Campina Grande, PB", function(location){
+		if(location == "ZERO_RESULTS"){
+			$scope.map = { center: [-7.2291, -35.8808] }; //Campina Grande
+		}else{
+			$scope.$apply(function() {
+				$scope.map = { 
+					center: [location.lat(), location.lng()]
+				};
 
-	geocodeAddress("Campina Grande", function(location){
-		$scope.$apply(function() {
-			$scope.map = { 
-				center: [location.lat(), location.lng()],
-				zoom: 5
-			};
-		});
+				$scope.marker = {
+					position: [location.lat(), location.lng()],
+					decimals: 4,
+					options: function() {
+						return { draggable: false };
+					}
+				}
+			});
+		}
 	});
 
 }]);
