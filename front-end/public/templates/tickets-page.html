@@ -10,10 +10,10 @@
 	  		<tr>
 	  			<th>Tickets Pendentes</th>
 	  		</tr>
-	  		<tr ng-repeat='ticket in tickets'>
+	  		<tr ng-repeat="ticket in tickets | filter: {status: 'pending'}">
 	  			<td>{{ticket.title}}</td>
-	  			<td><button type="button" class="btn btn-primary" ng-click="acceptTicket()">Aceitar</button></td>
-	  			<td><button type="button" class="btn btn-danger" ng-click="refuseTicket()">Recusar</button></td>
+	  			<td><button type="button" class="btn btn-primary" ng-click="acceptTicket(ticket)">Aceitar</button></td>
+	  			<td><button type="button" class="btn btn-danger" ng-click="refuseTicket(ticket)">Recusar</button></td>
 	  		</tr>
 		</table>
 	</div>
@@ -23,7 +23,7 @@
 	  		<tr>
 	  			<th>Tickets Aprovados</th>
 	  		</tr>
-	  		<tr ng-repeat='ticket in tickets'>
+	  		<tr ng-repeat="ticket in tickets | filter: {status: 'accepted'}">
 	  			<td>{{ticket.title}}</td>
 	  		</tr>
 		</table>
