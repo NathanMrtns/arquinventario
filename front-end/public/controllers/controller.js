@@ -143,7 +143,6 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
 
     $scope.logout = function(){
         sessionStorage.clear();
-        $state.go("login");
-        $state.reload();       
+        $state.go("login", null, { reload: true });        
     }
 }]);
