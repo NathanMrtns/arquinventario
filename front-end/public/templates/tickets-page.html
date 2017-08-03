@@ -6,11 +6,22 @@
 </head>
 <body>
 	<div id='ticketsBox' class='jumbotron'>
-		<h2>Lista de Tickets</h2>
-
 		<table class='table'>
 	  		<tr>
-	  			<th>Lista de Tickets</th>
+	  			<th>Tickets Pendentes</th>
+	  		</tr>
+	  		<tr ng-repeat='ticket in tickets'>
+	  			<td>{{ticket.title}}</td>
+	  			<td><button type="button" class="btn btn-primary" ng-click="acceptTicket()">Aceitar</button></td>
+	  			<td><button type="button" class="btn btn-danger" ng-click="refuseTicket()">Recusar</button></td>
+	  		</tr>
+		</table>
+	</div>
+
+	<div id='ticketsBox' class='jumbotron'>
+		<table class='table'>
+	  		<tr>
+	  			<th>Tickets Aprovados</th>
 	  		</tr>
 	  		<tr ng-repeat='ticket in tickets'>
 	  			<td>{{ticket.title}}</td>
