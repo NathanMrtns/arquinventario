@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('searchForBuildingsCtrl', function($scope, $http, $state){
+app.controller('searchForBuildingsCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state){
 	type = "name";
 	$scope.isName = 1;
 	
@@ -34,7 +34,7 @@ app.controller('searchForBuildingsCtrl', function($scope, $http, $state){
 		if($scope.searchName != ""){
 			$http({
 				method: 'GET',
-				url: 'http://localhost:8080/patrimony/'+type+'/'+$scope.searchName,
+				url: serverURL.value + '/patrimony/'+type+'/'+$scope.searchName,
 			}).then(function(result){
 
 				if(result.status == 200){
@@ -66,6 +66,6 @@ app.controller('searchForBuildingsCtrl', function($scope, $http, $state){
 	$scope.openPatrimony = function(patrimony){
 		$state.go('building', patrimony);
 	}
-});
+}]);
 
 
