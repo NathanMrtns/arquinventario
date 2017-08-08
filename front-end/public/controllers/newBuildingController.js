@@ -15,7 +15,6 @@ app.controller('newBuildingController', ['serverURL', '$scope', '$http', '$state
 	$scope.types = ["Comercial Misto", "Institucional", "Religioso", "Residencial"];
 
 	$scope.submit = function(file){
-		console.log($scope.address);
 		data =  {
 				"name":$scope.name,
 				"year": $scope.year,
@@ -31,12 +30,14 @@ app.controller('newBuildingController', ['serverURL', '$scope', '$http', '$state
 			url: serverURL.value+'/patrimony',
 			data: data
 		}).then(function(response){
-			Files.upload(file, $scope.name).then(function (data) {
-                console.log('Uploaded successfully');
-            }).catch(function(){
-                console.log('Upload failed');
-            });
-			$state.go("home");
+			if (Files != undefined){
+				Files.upload(file, $scope.name).then(function (data) {
+					console.log('Uploaded successfully');
+				}).catch(function(){
+					console.log('Upload failed');
+				});
+				$state.go("home");
+			}
 		});
 	}
 
