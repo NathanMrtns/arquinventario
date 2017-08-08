@@ -26,7 +26,7 @@ exports.createTicket = function(req, callback){
     title : req.body.title,
     description : req.body.description,
     address: req.body.address,
-    status: req.body.status
+    status: "pending"
   });
 
   ticket.save(function(err){
@@ -34,6 +34,20 @@ exports.createTicket = function(req, callback){
     else callback(200);
   });
 };
+
+exports.acceptTicket = function(req, callback){
+  Ticket.findOne({_id:req.params.id}, function(error, ticket){
+      if(error){
+        res.json({error:'Ticket não encontrado!'});
+      }else{
+        ticket.status = "accepted"
+        ticket.save(function(err, ticket){
+          if(err) callback({err:'Não foi possivel salvar'});
+          else callback(ticket);
+        });
+      }
+    });
+}
 
 exports.removeTicket = function(req, callback){
   Ticket.findOne({_id:req.params.id}, function(error, ticket){

@@ -21,6 +21,12 @@ router.post('/', function(req, res){
   });
 });
 
+router.put('/:id', function(req,res){
+   ticketCtrl.acceptTicket(req, function(response){
+    res.json(response);
+  });
+})
+
 
 router.delete('/:id', function(req, res){
   ticketCtrl.removeTicket(req, function(response){
