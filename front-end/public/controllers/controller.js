@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             tipology: null,
             address:null
         },
-        templateUrl : "templates/add-new-building.html",
+        templateUrl : "templates/edit-building.html",
         controller: "editBuildingController"
     })
     .state("building",{
