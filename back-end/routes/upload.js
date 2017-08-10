@@ -15,7 +15,7 @@ router.post('/image', function(req, res) {
             patrimonyName = val;
         });
         busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
-        var saveTo = path.join(__dirname, '/../uploads/', patrimonyName+".jpg");
+        var saveTo = path.join(__dirname, '/../uploads/', patrimonyName);
         file.pipe(fs.createWriteStream(saveTo));
         });
         busboy.on('finish', function() {
