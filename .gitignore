@@ -156,5 +156,7 @@ typings/
 # dotenv environment variables file
 .env
 
+back-end/uploads
+
 
 # End of https://www.gitignore.io/api/node,angular,intellij
