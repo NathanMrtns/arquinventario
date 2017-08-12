@@ -36,7 +36,6 @@ app.controller('searchForBuildingsCtrl', ['serverURL', '$scope', '$http', '$stat
 				method: 'GET',
 				url: serverURL.value + '/patrimony/'+type+'/'+$scope.searchName,
 			}).then(function(result){
-
 				if(result.status == 200){
 					if (result.data.length == 0)
 					{
@@ -52,15 +51,11 @@ app.controller('searchForBuildingsCtrl', ['serverURL', '$scope', '$http', '$stat
 						$scope.error = "";
 						console.log(result.data);
 						$scope.patrimonys_searched = result.data;
-//						$state.go('building', result.data[0] );
-
 					}
 				}else{
 				}
 			});
-		
 		}
-	
 	}
 	
 	$scope.openPatrimony = function(patrimony){

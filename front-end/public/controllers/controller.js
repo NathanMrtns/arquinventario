@@ -130,10 +130,6 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.listOfReports = function() {
         $state.go("complaintsPage");
     }
-
-    $scope.search = function(){
-        $state.go("searchBuildings");
-    }
     
     $scope.addNewTicket = function(){
         $state.go("addNewTicket");
