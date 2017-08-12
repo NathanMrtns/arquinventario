@@ -43,7 +43,7 @@ app.controller('searchForBuildingsCtrl', ['serverURL', '$scope', '$http', '$stat
 						$scope.isName = 1;
 						type = "name";
 						$scope.patrimonys_searched = [];
-						$scope.error = "Não foi encontrado nenhuma construção";
+						$scope.error = "Nenhuma construção foi encontrada.";
 					}
 					else
 					{
