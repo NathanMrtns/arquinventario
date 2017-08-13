@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ui.router', 'ngFileUpload', 'ngMaps']);
-app.value('serverURL', { value: 'https://arq-back.herokuapp.com' });
+app.value('serverURL', { value: 'http://localhost:8080' });
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
@@ -31,9 +31,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             description: null,
             history: null,
             tipology: null,
-            address:null
+            address:null, 
+            imagePath:null
         },
-        templateUrl : "templates/add-new-building.html",
+        templateUrl : "templates/edit-building.html",
         controller: "editBuildingController"
     })
     .state("building",{
@@ -47,7 +48,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             history: null,
             tipology: null,
             address:null,
-            additionalInformations: null
+            additionalInformations: null,
+            imagePath:null
         },
         templateUrl : "templates/building.html",
         controller: "buildingCtrl"
@@ -127,10 +129,6 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
 
     $scope.listOfReports = function() {
         $state.go("complaintsPage");
-    }
-
-    $scope.search = function(){
-        $state.go("searchBuildings");
     }
     
     $scope.addNewTicket = function(){
