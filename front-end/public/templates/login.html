@@ -6,7 +6,7 @@
   <script src="lib/angular/angular.js"></script>
   </head>
 
-<body style="background: url(assets/Background.png);">
+<body>
 <div id="logo" align="center">
   <img src="assets/Arq.png"/>
 </div>
@@ -28,7 +28,7 @@
                           <input id="password" type="password" class="form-control" name="password" ng-model="password" placeholder="Senha" required="true">
                       </div>
                       <p ng-show="error" style="color: red; font-size: 15px;">{{ error }}</p>
-                    <input class = "button" type = submit value = "entrar" ng-click = "login()"/>
+                    <input class = "btn btn-primary" type = submit value = "Entrar" ng-click = "login()"/>
                   </form>  
                </fieldset>
             </div>
@@ -55,7 +55,7 @@
                           <input id="password-repeat" type="password" class="form-control" name="password-repeated" ng-model="senhaRepetida" value="" placeholder="Repetir senha" required="true"/>
                       </div>
                       <p ng-show="error" style="color: red; font-size: 15px;">{{ error }}</p>
-                    <input class = "button" type = submit value = "cadastrar" ng-click = "signUp()"/>
+                    <input class = "btn btn-primary" type = submit value = "Cadastrar" ng-click = "signUp()"/>
                   </form>  
                </fieldset>
             </div>
@@ -63,7 +63,6 @@
         </div>
 
   </div>
-
 </body>
 
 

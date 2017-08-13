@@ -5,16 +5,15 @@
 	<title>Arquinventario</title>
 </head>
 <body>
-<h3 id="sobre" align="center">Veja logo abaixo uma lista com os patrimônios da nossa querida cidade!</h3>
+<h3 align="center">Veja logo abaixo uma lista com os patrimônios da nossa querida cidade!</h3>
 
-	<div id='homeBox' class='jumbotron'>
-		<h2>Patrimônios cadastrados</h2>
-
-		<table class='table'>
-	  		<tr ng-repeat='patrimony in patrimonies'>
-	  			<td ng-click='goToBuildingPage(patrimony)'><h3>{{patrimony.name}}</h3><td>
-	  		</tr>
-		</table>
+	<div id="TicketsBox" ng-repeat="patrimony in patrimonies" class="thumbnail">
+		<div class="caption">
+			<h1>{{patrimony.name}}</h1>
+			<p><strong>História:</strong> {{patrimony.history | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
+			<p><strong>Descrição:</strong> {{patrimony.description}}</p>
+			<a href="" ng-click="goToBuildingPage(patrimony)"> mais detalhes </a>
+		</div>
 	</div>
 </body>
 </html>
