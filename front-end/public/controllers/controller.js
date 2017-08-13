@@ -94,7 +94,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/tickets-page.html',
         controller:"ticketsPageCtrl"
     })
-
+    .state('aboutPage', {
+        url: "/aboutPage",
+        templateUrl: 'templates/about.html'
+    })
 });
 
 app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$state', function(serverURL,$rootScope , $scope, $http, $state) {
@@ -138,6 +141,11 @@ app.controller('MenuCtrl', ['serverURL', '$rootScope', '$scope', '$http', '$stat
     $scope.tickets = function(){
         $state.go("ticketsPage");
     }
+
+    $scope.about = function(){
+        $state.go("aboutPage");
+    }
+
 
     $scope.logout = function(){
         sessionStorage.clear();
