@@ -204,6 +204,7 @@ table tr:hover {
   width: 700px;
   padding-right: 60px;
   padding-left: 60px;
+  text-align: center;
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
@@ -254,6 +255,15 @@ table tr:hover {
 
 #divBusca img{
   float:left;
+}
+
+#card {
+  width: 800px;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #ticketsBox {
