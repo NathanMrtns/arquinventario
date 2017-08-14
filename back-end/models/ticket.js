@@ -16,6 +16,9 @@ var ticketSchema = new mongoose.Schema({
   status: {
     type:String,
     required:true
+  },
+  imagePath:{
+    type:String
   }
 },{collection:'ticket'});
 

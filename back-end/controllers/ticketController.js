@@ -26,7 +26,8 @@ exports.createTicket = function(req, callback){
     title : req.body.title,
     description : req.body.description,
     address: req.body.address,
-    status: "pending"
+    status: "pending",
+    imagePath: req.body.imagePath
   });
 
   ticket.save(function(err){
