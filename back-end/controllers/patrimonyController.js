@@ -88,6 +88,25 @@ exports.addAdditionalInformations = function(req, callback){
   });
 };
 
+exports.removeInfoAditional =  function(req, callback){
+  Patrimony.findOne({_id:req.params.id_patrimony}, function(error, patrimony){
+    if(error){
+      return callback({error:'Não foi possível remover a informação adicional'})
+    }else{
+      //patrimony.additionalInformations.update({}, {$unset : {"patrimony.additionalInformations.req.params.index_information" : 1 }})
+      if(req.params.index_information < 0 || req.params.index_information >= patrimony.additionalInformations.length || patrimony.additionalInformations.length == 0)
+      {
+        return callback({response:'Erro durante a remoção do comentário'});
+      }
+      patrimony.additionalInformations.splice(req.params.index_information, 1);
+      patrimony.save(function(err){
+          if(err) return callback({response:'Erro durante a remoção do comentário'});
+          else return callback({response:'Comentário excluido com sucesso'});
+      });
+    }
+  });
+};
+
 exports.removePatrimony = function(req, callback){
   Patrimony.findOne({_id:req.params.id}, function(error, patrimony){
     if(error){

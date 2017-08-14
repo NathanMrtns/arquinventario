@@ -34,6 +34,12 @@ router.put('/addInformation/:id', function(req, res){
   });
 });
 
+router.delete('/deleteInformation/:id_patrimony/:index_information', function(req, res){
+  patrimonyCtrl.removeInfoAditional(req, function(response){
+    res.json(response);
+  });
+});
+
 router.delete('/:id', function(req, res){
   patrimonyCtrl.removePatrimony(req, function(response){
     res.json(response);
