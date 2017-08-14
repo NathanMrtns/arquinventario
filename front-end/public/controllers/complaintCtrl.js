@@ -10,7 +10,7 @@ app.controller('complaintCtrl', ['serverURL', '$scope', '$http', '$state', funct
 		$state.go("complaintsPage");
 	}
 
-	$scope.deleteC = function() {
+	$scope.delete = function() {
 		$http({
 			method: 'DELETE',
 			url: serverURL.value + '/complaint/'+complaint._id
@@ -25,18 +25,3 @@ app.controller('complaintCtrl', ['serverURL', '$scope', '$http', '$state', funct
         });
 	}
 }]);
-
-app.directive('ngConfirmClick', [
-        function(){
-            return {
-                link: function (scope, element, attr) {
-                    var msg = attr.ngConfirmClick || "Tem certeza?";
-                    var clickAction = attr.confirmedClick;
-                    element.bind('click',function (event) {
-                        if ( window.confirm(msg) ) {
-                            scope.$eval(clickAction)
-                        }
-                    });
-                }
-            };
-    }])
