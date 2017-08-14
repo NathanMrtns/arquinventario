@@ -56,7 +56,6 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
         });
 	}
 
-
 	$scope.sendComment = function(){
 		$http({
 			method: 'PUT',
@@ -110,6 +109,21 @@ app.controller('buildingCtrl', ['serverURL', '$scope', '$http', '$state', functi
 	});
 
 }]);
+
+app.directive('ngConfirmClick', [
+        function(){
+            return {
+                link: function (scope, element, attr) {
+                    var msg = attr.ngConfirmClick || "Tem certeza?";
+                    var clickAction = attr.confirmedClick;
+                    element.bind('click',function (event) {
+                        if ( window.confirm(msg) ) {
+                            scope.$eval(clickAction)
+                        }
+                    });
+                }
+            };
+    }])
 
 
   function _arrayBufferToBase64(buffer) {
