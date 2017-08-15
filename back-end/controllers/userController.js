@@ -11,6 +11,16 @@ exports.getUsers = function(callback){
   });
 };
 
+exports.getUserById = function(req, callback){
+  User.findOne({_id:req.params.id}, function(error, user){
+    if(error){
+      res.json({error:'Usuário não encontrado!'});
+    }else{
+      callback(user);
+    }
+  });
+};
+
 exports.createUser = function(req, callback){
   var user = new User({
     role:req.body.role,

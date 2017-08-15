@@ -6,7 +6,7 @@ var loginController = require('../controllers/loginController');
 router.post('/', function(req, res){
   loginController.login(req, function(response){
     if(response.status == 200){
-      res.status(200).send(response.user.role);
+      res.status(200).send(response.user);
     }else{
       res.status(401).send('Unauthorized');
     }
