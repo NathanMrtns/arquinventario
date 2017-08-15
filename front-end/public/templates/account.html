@@ -6,6 +6,31 @@
 	<title>Arquinventario</title>
 </head>
 <body>
+<div id='buildingBox' class="thumbnail">
 
+    <form name="formBuilding" id="formBuilding" class="form-horizontal" enctype="multipart/form-data">
+      <h2 align="center"><strong>Minha conta</strong></h2>
+      <br>
+      <p>
+        <strong>Nome:</strong>
+        <span>{{nome}}</span>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <span>{{email}}</span>
+      </p>
+
+      <p>
+        <strong>Senha:</strong>
+        <span>{{senha}}</span>
+      </p>
+      <br>
+    </form>
+        <div class='form-group' style="padding-left: 45%">
+        <button type='button' ng-click="delete()" name='btn_remove' class='btn btn-danger'>Excluir</button>
+      </div>
+
+</div>
 </body>
 </html>

@@ -6,10 +6,6 @@ app.controller('complaintCtrl', ['serverURL', '$scope', '$http', '$state', funct
 	$scope.description = $state.params.description;
 	$scope.address = $state.params.address;
 
-	$scope.goToComplaintsPage = function() {
-		$state.go("complaintsPage");
-	}
-
 	$scope.delete = function() {
 		$http({
 			method: 'DELETE',

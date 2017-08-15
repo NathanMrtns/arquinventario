@@ -18,7 +18,7 @@ app.controller('usersCtrl', ['serverURL', '$scope', '$http', '$state', function(
 
 	getAllUsers();
 
-    $scope.signUp = function(){
+    $scope.signAdmin = function(){
         if($scope.senha != $scope.senhaRepetida){
             $scope.error = "As senhas devem ser as mesmas!";
         }else if(!validateEmail($scope.email2)){
