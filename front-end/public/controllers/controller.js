@@ -70,7 +70,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             _id: null,
             title: null,
             description: null,
-            address: null
+            address: null,
+            imagePath: null
         },
         templateUrl: "templates/complaint.html",
         controller: "complaintCtrl"

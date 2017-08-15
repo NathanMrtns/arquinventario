@@ -9,19 +9,4 @@ app.controller('complaintCtrl', ['serverURL', '$scope', '$http', '$state', funct
 	$scope.goToComplaintsPage = function() {
 		$state.go("complaintsPage");
 	}
-
-	$scope.delete = function() {
-		$http({
-			method: 'DELETE',
-			url: serverURL.value + '/complaint/'+complaint._id
-		}).then(function success(response){
-            if(response.status == 200){
-                $state.go("home");
-            } else {
-                alert('Houve um erro!');
-            }
-        }, function error(response){
-            console.log(response.status);
-        });
-	}
 }]);
