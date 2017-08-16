@@ -20,5 +20,4 @@ app.controller('complaintCtrl', ['serverURL', '$scope', '$http', '$state', funct
             console.log(response.status);
         });
 	}
-
 }]);

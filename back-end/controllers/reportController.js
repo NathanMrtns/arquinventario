@@ -15,7 +15,8 @@ exports.createReport = function(req, callback){
   var report = new Report({
     title : req.body.title,
     description : req.body.description,
-    address: req.body.address
+    address: req.body.address,
+    imagePath: req.body.imagePath
   });
 
   report.save(function(err){

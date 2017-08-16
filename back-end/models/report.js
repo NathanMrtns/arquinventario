@@ -12,6 +12,9 @@ var reportSchema = new mongoose.Schema({
   address : {
     type:String,
     required:true
+  },
+  imagePath:{
+    type:String
   }
 },{collection:'report'});
 
