@@ -10,6 +10,12 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:id', function(req, res) {
+  userController.getUserById(req, function(response){
+    res.json(response);
+  });
+});
+
 router.post('/', function(req, res){
   userController.createUser(req, function(response){
     res.json(response);
