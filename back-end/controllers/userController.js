@@ -49,12 +49,15 @@ exports.updateUser = function(req, callback){
       if(req.body.email){
         user.email = req.body.email;
       }
-      if(req.password){
+      if(req.body.password){
         user.password = req.body.password;
+      }
+      if(req.body.role){
+        user.role = req.body.role;
       }
 
       user.save(function(err, user){
-        if(err) callback({err:'Não foi possivel salvar'});
+        if(err) callback({err:err});
         else callback(user);
       });
     }
