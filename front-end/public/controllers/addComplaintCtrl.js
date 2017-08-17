@@ -21,6 +21,7 @@ app.controller('addComplaintCtrl', ['serverURL', '$scope', '$http', '$state', 'F
 			url: serverURL.value + '/report',
 			data: {
 				"title": $scope.title,
+				"status": "open",
 				"address": $scope.address,
 				"date": $scope.date,
 				"description": $scope.description,

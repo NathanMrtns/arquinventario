@@ -25,9 +25,10 @@ app.controller('accountCtrl', ['serverURL', '$scope', '$http', '$state', functio
 	$scope.delete = function(){
 		$http({
 			method: 'DELETE',
-			url: serverURL.value + '/user/'+ user._id
+			url: serverURL.value + '/user/'+ sessionStorage.getItem("user")
 		}).then(function success(response){
             if(response.status == 200){
+                sessionStorage.clear(); 
                 $state.go("home");
             } else {
                 alert('Houve um erro!');

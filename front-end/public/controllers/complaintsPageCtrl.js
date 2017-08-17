@@ -1,7 +1,8 @@
 var app = angular.module('app');
 
 app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', function($scope, $http, $state, serverURL) {
-	$scope.complaints = [];
+	$scope.complaints       = [];
+	$scope.closedComplaints = [];
 
 	getAllComplaints = function() {
 		$http({
@@ -12,7 +13,11 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 				getImage(complaint.imagePath, function(image){
 					complaint.image = image;
 				});
-				$scope.complaints.push(complaint);
+				if(complaint.status == "closed"){
+					$scope.closedComplaints.push(complaint);	
+				} else{
+					$scope.complaints.push(complaint);
+				}				
 			});
 		});
 	}
@@ -36,7 +41,6 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 	getAllComplaints();
 
 	$scope.delete = function(id) {
-		console.log(id);
 		$http({
 			method: 'DELETE',
 			url: serverURL.value + '/report/'+id
@@ -59,6 +63,10 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 	$scope.goToComplaintPage = function(complaint) {
 		$state.go("complaint", complaint);
 	}
+
+	$scope.close = function(complaint) {
+	}
+	
 }]);
 
   function _arrayBufferToBase64(buffer) {
