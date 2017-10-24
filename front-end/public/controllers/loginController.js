@@ -34,10 +34,13 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
     }
 
     $scope.signUp = function(){
-        if($scope.senha != $scope.senhaRepetida){
-            $scope.error = "As senhas devem ser as mesmas!";
+        if($scope.nome == undefined || $scope.nome.trim() == ""){
+            $scope.error = "Nome inválido";
         }else if(!validateEmail($scope.email2)){
             $scope.error = "Email inválido";
+        }else if($scope.senha != $scope.senhaRepetida || ($scope.senha == undefined || $scope.senhaRepetida == undefined)
+        || ($scope.senha.trim() == "" || $scope.senhaRepetida.trim() == "")){
+            $scope.error = "As senhas devem ser as mesmas!";
         }else{
             $scope.error = "";
             $http({
@@ -60,10 +63,9 @@ app.controller('loginCtrl', ['serverURL', '$scope', '$http', '$state', function(
             });
         }
     }
-    
+
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 }]);
-
