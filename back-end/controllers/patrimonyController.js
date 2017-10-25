@@ -16,7 +16,6 @@ exports.getPatrimoniesByFilter = function(req,callback){
   var search = req.params.searchField;
   switch(filter) {
     case "year":
-        console.log("in");
         searchByYear(search, callback);
         break;
     case "style":
@@ -103,7 +102,7 @@ exports.removePatrimony = function(req, callback){
 };
 
 function searchByYear(stringSearch, callback){
-    Patrimony.find({ year: parseInt(stringSearch) }, function(error, patrimonies){
+    Patrimony.find({ year: { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
         if(error){
           callback({error:'Não é possivel retornar patrimônios'});
         }else{
