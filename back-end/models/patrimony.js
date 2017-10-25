@@ -6,7 +6,7 @@ var patrimonySchema = new mongoose.Schema({
     required: true
   },
   year: {
-    type:Number
+    type:String
   },
   style:{
     type:String
