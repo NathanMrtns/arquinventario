@@ -102,7 +102,7 @@ exports.removePatrimony = function(req, callback){
 };
 
 function searchByYear(stringSearch, callback){
-    Patrimony.find({ year: { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+    Patrimony.find({ year:  {"$regex": stringSearch, "$options": "i"} }, function(error, patrimonies){
         if(error){
           callback({error:'Não é possivel retornar patrimônios'});
         }else{
@@ -112,7 +112,7 @@ function searchByYear(stringSearch, callback){
 }
 
 function searchByStyle(stringSearch, callback){
-    Patrimony.find({ style : { "$regex": stringSearch, "$options": "i" } }, function(error, patrimonies){
+    Patrimony.find({"$text": {"$search": stringSearch}} , function(error, patrimonies){
         if(error){
           callback({error:'Não é possivel retornar patrimônios'});
         }else{

@@ -9,7 +9,8 @@ var patrimonySchema = new mongoose.Schema({
     type:String
   },
   style:{
-    type:String
+    type:String,
+    text: true
   },
   history:{
     type:String
