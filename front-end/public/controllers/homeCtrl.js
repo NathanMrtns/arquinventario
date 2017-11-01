@@ -42,7 +42,6 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 				method: 'GET',
 				url: serverURL.value + '/patrimony/'+type+'/'+$scope.searchValue,
 			}).then(function(result){
-				console.log(result.data);				
 				if(result.status == 200){
 					if (result.data.length == 0)
 					{
