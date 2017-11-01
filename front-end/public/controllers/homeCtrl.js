@@ -37,7 +37,6 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 	}
 
 	$scope.search = function(){
-		console.log(type)
 		if($scope.searchValue != ""){
 			$http({
 				method: 'GET',
@@ -55,9 +54,8 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 					else
 					{
 						$scope.isSearch = 1;
-						$scope.searchValue = "";
+						//$scope.searchValue = "";
 						$scope.error = "";
-						console.log(result.data);
 						$scope.patrimonies = result.data;
 					}
 				}else{
