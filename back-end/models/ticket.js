@@ -17,6 +17,19 @@ var ticketSchema = new mongoose.Schema({
     type:String,
     required:true
   },
+  year: {
+    type:String
+  },
+  style:{
+    type:String,
+    text: true
+  },
+  history:{
+    type:String
+  },
+  tipology:{
+    type:String
+  },
   imagePath:{
     type:String
   }

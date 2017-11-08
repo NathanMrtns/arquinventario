@@ -23,10 +23,14 @@ exports.getTicketsByStatus = function(req, callback){
 
 exports.createTicket = function(req, callback){
   var ticket = new Ticket({
-    title : req.body.title,
-    description : req.body.description,
+    title: req.body.title,
+    description: req.body.description,
     address: req.body.address,
     status: "pending",
+    year: req.body.year,
+    style: req.body.style,
+    history: req.body.history,
+    tipology: req.body.tipology,
     imagePath: req.body.imagePath
   });
 
