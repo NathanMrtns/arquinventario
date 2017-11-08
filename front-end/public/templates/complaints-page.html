@@ -11,10 +11,10 @@
 		<h3 ng-show="complaints.length == 0" align="center"> Não há nenhuma denúncia </h3>
 		<div id="card"  ng-repeat="complaint in complaints" class="thumbnail">
 			<div class="caption">
-				<h2><strong>{{complaint.title}}</strong></h2>
+				<h2 align = "center"><strong>{{complaint.title}}</strong></h2>
 				<p><strong>Endereço:</strong> {{complaint.address}}</p>
 				<p><strong>Descrição:</strong> {{complaint.description | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
-				<h2 ng-show="complaint.imagePath != null">Foto</h2>
+				<p ng-show="complaint.imagePath != null"><strong>Foto:</strong></p>
 				<img style="width:50%;" class="col-center-block" data-ng-src="data:image/png;base64,{{complaint.image}}">
 				<br>
 			    <div class='form-group' align="center" ng-show="userRole === 'admin'">

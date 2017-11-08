@@ -4,12 +4,19 @@ app.controller('addTicketCtrl', ['serverURL', '$scope', '$http', '$state', 'File
 	$scope.title = "";
 	$scope.address = "";
 	$scope.description = "";
-	$scope.status = "pending"; //accepted, pending and refused 
+	$scope.history = "";
+	$scope.style = "";
+	$scope.year = "";
+	$scope.tipology = "";
+	$scope.status = "pending"; //accepted, pending and refused
 
 	$scope.urgencyLevels = ["Baixo", "Médio", "Alto"];
 
+	$scope.styles = ["Arte Deco", "Contemporâneo", "Eclético", "Protomoderno", "Moderno"];
+	$scope.types = ["Comercial Misto", "Institucional", "Religioso", "Residencial"];
+
 	$scope.submit = function(file) {
-		var imagePath; 
+		var imagePath;
 		if (file != undefined && $scope.title.replace(/ /g,'')+file.name != $state.params.imagePath){
 			imagePath = $scope.title.replace(/ /g,'')+file.name
 		} else {
@@ -20,9 +27,13 @@ app.controller('addTicketCtrl', ['serverURL', '$scope', '$http', '$state', 'File
 			url: serverURL.value + '/ticket',
 			data: {
 				"title": $scope.title,
-				"address": $scope.address,
 				"description": $scope.description,
+				"address": $scope.address,
 				"status":  $scope.status,
+				"year": $scope.year,
+				"style": $scope.style,
+				"history": $scope.history,
+				"tipology": $scope.tipology,
 				"imagePath" : imagePath
 			}
 		}).then(function(response){

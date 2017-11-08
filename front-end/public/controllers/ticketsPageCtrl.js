@@ -36,13 +36,38 @@ app.controller('ticketsPageCtrl', ['serverURL', '$scope', '$http', '$state', 'Fi
 	getAllTickets();
 
 	$scope.acceptTicket = function(ticket) {
-		//console.log(ticket);
 		$http({
 			method: 'PUT',
 			url: serverURL.value + '/ticket/'+ticket._id
 		}).then(function(response){
 			console.log(response);
-			ticket.status = "accepted"
+			ticket.status = "accepted";
+
+			data =  {
+					"name":ticket.title,
+					"year": ticket.year,
+					"style": ticket.style,
+					"history": ticket.history,
+					"description": ticket.description,
+					"tipology": ticket.tipology,
+					"address" : ticket.address,
+					"imagePath" : ticket.imagePath
+				}
+
+			$http({
+				method: 'POST',
+				url: serverURL.value+'/patrimony',
+				data: data
+			}).then(function(response){
+				if (Files != undefined){
+					Files.upload(file, imagePath).then(function (data) {
+						console.log('Uploaded successfully');
+					}).catch(function(){
+						console.log('Upload failed');
+					});
+					$state.go("home");
+				}
+			});
 		})
 	}
 
@@ -53,7 +78,7 @@ app.controller('ticketsPageCtrl', ['serverURL', '$scope', '$http', '$state', 'Fi
 			url: serverURL.value + '/ticket/'+ticket._id
 		}).then(function(response){
 			$state.reload();
-		}) 
+		})
 	}
 }]);
 
