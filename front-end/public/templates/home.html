@@ -35,7 +35,7 @@
 
 		</br>
 
-		<div id="card" ng-repeat="patrimony in patrimonies" class="thumbnail">
+		<div id="card" ng-repeat="patrimony in patrimonies | startFrom: currentPage * pageSize | limitTo: pageSize" class="thumbnail">
 			<div class="caption">
 				<h2><strong>{{patrimony.name}}</strong></h2>
 				<p><strong>História:</strong> {{patrimony.history | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
@@ -43,6 +43,9 @@
 				<a href="" ng-click="goToBuildingPage(patrimony)"> mais detalhes </a>
 			</div>
 		</div>
+		<button type="button" class="btn btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">Anterior</button>
+		<span>{{currentPage + 1}}/{{numberOfPages()}}</span>
+		<button type="button" class="btn btn-primary" ng-disabled="currentPage >= getPatrimonies().length/pageSize - 1" ng-click="currentPage = currentPage + 1">Próximo</button>
 	</div>
 </body>
 </html>

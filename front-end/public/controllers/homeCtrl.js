@@ -2,8 +2,14 @@ var app = angular.module('app');
 
 app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 	type = "name";
+
+	$scope.currentPage = 0;
+	$scope.pageSize = 3;
+
 	$scope.isName = 1;
+
 	$scope.patrimonies = [];
+	$scope.searchValue = "";
 
 	getAllPatrimonies = function() {
 		$http({
@@ -34,6 +40,21 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 	
 	$scope.checkStyle = function() {
 		type = "style";
+	}
+
+	$scope.getPatrimonies = function(){
+		//return $filter("filter")($scope.patrimonies, $scope.searchValue);
+		var arr = [];
+		if($scope.searchValue == "") {
+			arr = $scope.patrimonies;
+		} else {
+			for (var ea in $scope.patrimonies) {
+				if ($scope.patrimonies[ea].indexOf($scope.searchValue) > -1) {
+					arr.push($scope.patrimonies[ea]);
+				}
+			}
+		}
+		return arr;
 	}
 
 	$scope.search = function(){
@@ -81,4 +102,16 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 		var tipology = patrimony.tipology;
 		$state.go("building", patrimony);
 	}
+
+	$scope.numberOfPages = function() {
+		console.log($scope.getPatrimonies().length)
+		return Math.ceil($scope.getPatrimonies().length/$scope.pageSize);
+	}
 }]);
+
+app.filter("startFrom", function() {
+	return function(input, start) {
+		start = +start;
+		return input.slice(start);
+	}
+})
