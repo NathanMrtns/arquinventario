@@ -43,9 +43,11 @@
 				<a href="" ng-click="goToBuildingPage(patrimony)"> mais detalhes </a>
 			</div>
 		</div>
+		<div class="col-* text-center">
 		<button type="button" class="btn btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">Anterior</button>
 		<span>{{currentPage + 1}}/{{numberOfPages()}}</span>
 		<button type="button" class="btn btn-primary" ng-disabled="currentPage >= getPatrimonies().length/pageSize - 1" ng-click="currentPage = currentPage + 1">Próximo</button>
+		</div>
 	</div>
 </body>
 </html>
