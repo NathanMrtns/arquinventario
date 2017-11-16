@@ -7,13 +7,13 @@
 <body>
 <h3 align="center">Veja logo abaixo uma lista com os patrimônios da nossa querida cidade!</h3>
 
-	<div class='jumbotron' style="width: 900px;">
+	<div class='container-fluid .col-*'>
 		<h2 align="center">Patrimônios</h2>
 
 		</br>
 
-		<form name="formHome" id="formHome" class="form-horizontal" enctype="multipart/form-data" style="font-size: 15px; width: 780px; margin: 0 auto;">
-			<input type="text" id="searchField" class="form-control" ng-model="searchValue" ng-change="search()" placeholder="O que você está buscando?">
+		<form name="formHome" id="formHome" class="form-horizontal" enctype="multipart/form-data">
+			<input type="text" id="searchField" class="form-control .col-*" ng-model="searchValue" ng-change="search()" placeholder="O que você está buscando?">
 
 			</br>
 
@@ -35,11 +35,11 @@
 
 		</br>
 
-		<div id="card" ng-repeat="patrimony in patrimonies | startFrom: currentPage * pageSize | limitTo: pageSize" class="thumbnail">
+		<div class="container card card-shadow .col-xs-6" ng-repeat="patrimony in patrimonies | startFrom: currentPage * pageSize | limitTo: pageSize" class="thumbnail">
 			<div class="caption">
-				<h2><strong>{{patrimony.name}}</strong></h2>
-				<p><strong>História:</strong> {{patrimony.history | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
-				<p><strong>Descrição:</strong> {{patrimony.description}}</p>
+				<h2 class=".col-*"><strong>{{patrimony.name}}</strong></h2>
+				<p class="hidden-sm hidden-xs"><strong>História:</strong> {{patrimony.history | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
+				<p class="hidden-sm hidden-xs"><strong>Descrição:</strong> {{patrimony.description}}</p>
 				<a href="" ng-click="goToBuildingPage(patrimony)"> mais detalhes </a>
 			</div>
 		</div>
