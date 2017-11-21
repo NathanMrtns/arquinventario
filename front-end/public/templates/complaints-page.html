@@ -6,15 +6,16 @@
 </head>
 <body>
 <h3 align="center">Veja logo abaixo uma lista com as denúncias feitas pelos usuários</h3>
-	<div class='jumbotron'  style="width: 900px;">
+	<div class='container-fluid .col-*'>
 		<h2 align="center">Denúncias</h2>
-		<h3 ng-show="complaints.length == 0" align="center"> Não há nenhuma denúncia </h3>
-		<div id="card"  ng-repeat="complaint in complaints" class="thumbnail">
+		<h2 ng-show="complaints.length == 0" align="center"> Não há nenhuma denúncia </h2>
+
+		<div align = "center" class="container card card-shadow .col-xs-6"  ng-repeat="complaint in complaints" class="thumbnail">
 			<div class="caption">
-				<h2 align = "center"><strong>{{complaint.title}}</strong></h2>
+				<h2 class=".col-*"><strong>{{complaint.title}}</strong></h2>
 				<p><strong>Endereço:</strong> {{complaint.address}}</p>
 				<p><strong>Descrição:</strong> {{complaint.description | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
-				<p ng-show="complaint.imagePath != null"><strong>Foto:</strong></p>
+				<p ng-show="complaint.image != null"><strong>Foto:</strong></p>
 				<img style="width:50%;" class="col-center-block" data-ng-src="data:image/png;base64,{{complaint.image}}">
 				<br>
 			    <div class='form-group' align="center" ng-show="userRole === 'admin'">

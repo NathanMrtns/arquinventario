@@ -14,10 +14,10 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 					complaint.image = image;
 				});
 				if(complaint.status == "closed"){
-					$scope.closedComplaints.push(complaint);	
+					$scope.closedComplaints.push(complaint);
 				} else{
 					$scope.complaints.push(complaint);
-				}				
+				}
 			});
 		});
 	}
@@ -66,7 +66,7 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 
 	$scope.close = function(complaint) {
 	}
-	
+
 }]);
 
   function _arrayBufferToBase64(buffer) {
