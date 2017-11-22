@@ -3,11 +3,16 @@ var app = angular.module('app');
 app.controller('accountCtrl', ['serverURL', '$scope', '$http', '$state', function(serverURL, $scope, $http, $state) {
 
 	$scope.user = "";
+
+    $scope.name = "";
+    $scope.email = "";
+    $scope.password = "";
+    $scope.repeatPassword = "";
 	
     user = function(user_id) {
     	$http({
     		method: 'GET', 
-			url: serverURL.value + /user/ + user_id
+			url: serverURL.value + '/user/' + user_id
     	}).then(function success(response){
     		if(response.status == 200){
     			$scope.user = response.data;
@@ -24,7 +29,7 @@ app.controller('accountCtrl', ['serverURL', '$scope', '$http', '$state', functio
 	$scope.delete = function(){
 		$http({
 			method: 'DELETE',
-			url: serverURL.value + '/user/'+ sessionStorage.getItem("user")
+			url: serverURL.value + '/user/' + sessionStorage.getItem("user")
 		}).then(function success(response){
             if(response.status == 200){
                 sessionStorage.clear(); 
@@ -38,7 +43,20 @@ app.controller('accountCtrl', ['serverURL', '$scope', '$http', '$state', functio
 	}
 
 	$scope.update = function() {
+        data = {
+            "name": $scope.name,
+            "email": $scope.email,
+            "password": $scope.password,
+            "repeatPassword": $scope.repeatPassword,
+        }
 
+        $http({
+            method: 'PUT',
+            url: serverURL.value + '/user/edit/' + sessionStorage.getItem("user"),
+            data: data
+        }).then(function(response){
+            console.log(response);
+        });
 	}
 
 }]);
