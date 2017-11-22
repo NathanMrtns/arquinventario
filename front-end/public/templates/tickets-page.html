@@ -7,6 +7,7 @@
 <body>
 	<div class='container-fluid .col-*'>
 	<h2 align = "center"> Sugestões de pendentes </h2>
+
 	<h4 align="center" ng-show="(tickets | filter: {status: 'pending'}).length == 0">Nenhuma sugestão pendente <h4>
 	<div align="enter" class="container card card-shadow .col-xs-6" ng-repeat="ticket in tickets | filter: {status: 'pending'}" class="thumbnail">
 		<div class="caption">
@@ -21,8 +22,7 @@
 					</div class='form-group'>
 			  		<button id="acceptButton" type="button" class="btn btn-primary" ng-click="acceptTicket(ticket)">Aceitar</button>
 			  		<button id="refuseButton" type="button" class="btn btn-primary" ng-click="refuseTicket(ticket)">Recusar</button>
-			  	</div>
-					<br>
+			  	</div>					<br>
 		</div>
 	</div>
 
