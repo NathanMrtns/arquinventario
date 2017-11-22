@@ -5,46 +5,45 @@
 	<title>Arquinventario</title>
 </head>
 <body>
-	<br>
+	<div class='container-fluid .col-*'>
 	<h2 align = "center"> Sugestões de pendentes </h2>
-	<div class='jumbotron'  style="width: 900px;">
-	<h3 align="center" ng-show="(tickets | filter: {status: 'pending'}).length == 0">Nenhuma sugestão pendente <h3>
-	<div id="ticketsBox" ng-repeat="ticket in tickets | filter: {status: 'pending'}">
-		<div id="acceptedTicketsBox" class="thumbnail">
-			<div class="caption">
-				<h2>{{ticket.title}}</h2>
-		  		<p><strong>Endereço:</strong> {{ticket.address}}</p>
+	<h4 align="center" ng-show="(tickets | filter: {status: 'pending'}).length == 0">Nenhuma sugestão pendente <h4>
+	<div align="enter" class="container card card-shadow .col-xs-6" ng-repeat="ticket in tickets | filter: {status: 'pending'}" class="thumbnail">
+		<div class="caption">
+					<h2 class=".col-*"><strong>{{ticket.title}}</strong></h2>
+			  	<p><strong>Endereço:</strong> {{ticket.address}}</p>
+					<p><strong>Descrição:</strong> {{ticket.description}}</p>
+
+					<div ng-show="ticket.image != null">
+					<p></strong>Foto:</strong></p>
+		        		<img style="width:60%;" class="col-center-block" data-ng-src="data:image/png;base64,{{ticket.image}}">
+						<br>
+					</div class='form-group'>
+			  		<button id="acceptButton" type="button" class="btn btn-primary" ng-click="acceptTicket(ticket)">Aceitar</button>
+			  		<button id="refuseButton" type="button" class="btn btn-primary" ng-click="refuseTicket(ticket)">Recusar</button>
+			  	</div>
+					<br>
+		</div>
+	</div>
+
+<div class='container-fluid .col-*'>
+<h2 align = "center"> Sugestões Aprovadas </h2>
+	<h4 align="center" ng-show="(tickets | filter: {status: 'accepted'}).length == 0">Nenhuma sugestão aceita <h4>
+	<div align="enter" class="container card card-shadow .col-xs-6" ng-repeat="ticket in tickets | filter: {status: 'accepted'}" class="thumbnail">
+		<div class="caption">
+				<h2 class=".col-*"><strong>{{ticket.title}}</strong></h2>
+				<p><strong>Endereço:</strong> {{ticket.address}}</p>
 				<p><strong>Descrição:</strong> {{ticket.description}}</p>
 				<div ng-show="ticket.image != null">
 				<p></strong>Foto:</strong></p>
 	        		<img style="width:60%;" class="col-center-block" data-ng-src="data:image/png;base64,{{ticket.image}}">
 					<br>
-				</div>
-		  		<button id="acceptButton" type="button" class="btn btn-primary" ng-click="acceptTicket(ticket)">Aceitar</button>
-		  		<button id="refuseButton" type="button" class="btn btn-danger" ng-click="refuseTicket(ticket)">Recusar</button>
-		  	</div>
+				</div class="form-group">
+						<button id="refuseButton" type="button" class="btn btn-primary" ng-click="refuseTicket(ticket)">Excluir</button>
+					</div>
+					<br>
 		</div>
-	</div>
 	</div>
 
-<h2 align = "center"> Sugestões Aprovadas </h2>
-<div class='jumbotron'  style="width: 900px;">
-	<h3 align="center" ng-show="(tickets | filter: {status: 'accepted'}).length == 0">Nenhuma sugestão aceita <h3>
-	<div id="ticketsBox" ng-repeat="ticket in tickets | filter: {status: 'accepted'}">
-		<div id="acceptedTicketsBox" class="thumbnail">
-			<div class="caption">
-				<h2>{{ticket.title}}</h2>
-				<p><strong>Endereço:</strong> {{ticket.address}}</p>
-			<p><strong>Descrição:</strong> {{ticket.description}}</p>
-			<div ng-show="ticket.image != null">
-			<p></strong>Foto:</strong></p>
-        		<img style="width:60%;" class="col-center-block" data-ng-src="data:image/png;base64,{{ticket.image}}">
-				<br>
-			</div>
-					<button id="refuseButton" type="button" class="btn btn-danger" ng-click="refuseTicket(ticket)">Excluir</button>
-				</div>
-		</div>
-	</div>
-</div>
 </body>
 </html>

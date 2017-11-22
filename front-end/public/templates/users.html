@@ -4,12 +4,15 @@
 <head>
 	<title>Arquinventario</title>
 </head>
+
 <body>
-<h3 align="center">Abaixo segue a opção de cadastro de um novo administrador</h3>
-<br>
-	<div class="jumbotron" style="width: 900px">		
-	<h2 align="center" style="margin: 0 auto;">Cadastrar administrador</h2>
-	<br>
+<h3 align="center">Abaixo você pode criar um novo administrador e ver os usuários cadastrados</h3>
+	<div class='container-fluid .col-*'>
+	<div align = "center" class="container card card-shadow .col-xs-6" class="thumbnail">
+		<br>
+	<div class = "caption">
+	<h2 align="center" style="margin: 0 auto;"><strong>Cadastrar administrador<strong></h2>
+		<br>
 		<form name="formHome" id="formHome" class="form-horizontal" enctype="multipart/form-data" style="font-size: 15px; width: 800px; margin: 0 auto;">
 			 <input id="name" type="text" class="form-control" name="nome" ng-model="nome" value="" placeholder="Nome completo" required="true"/>
 			 <br>
@@ -24,35 +27,33 @@
 				<button type="button" class="btn btn-primary" ng-click="signAdmin()">Criar</button>
 				<button type="button" class="btn btn-primary" ng-click="clean()">Limpar</button>
 			</div>
+			<br>
 		</form>
 	</div>
-
-	<br>
-
-	<h3 align="center">Abaixo segue uma lista dos usuários cadastrados no site</h3>
-	<br>
-	<div class='jumbotron' style="width: 900px">
-
-		<h2 align="center">Administradores</h2>
-
-		<div id="card" ng-repeat="user in users" class="thumbnail" ng-show="user.role ==='admin'">
+</div>
+</div>
+		<h3 align="center">Administradores</h3>
+	<div class='container-fluid .col-*'>
+		<div align = "center" class="container card card-shadow .col-xs-6" class="thumbnail" ng-repeat="user in users" ng-show="user.role ==='admin'">
 			<div class="caption">
-				<p><strong>Nome:</strong> {{user.name}}</p>
-				<p><strong>Email:</strong> {{user.email}}</p>
+				<p style="margin: 5px; font-weight: normal;"><strong>Nome:</strong> {{user.name}}</p>
+				<p style="margin: 5px; font-weight: normal;"><strong>Email:</strong> {{user.email}}</p>
 
 			</div>
 		</div>
+</div>
 
-		<h2 align="center">Usuários comuns</h2>
-
-		<div id="card" ng-repeat="user in users" class="thumbnail" ng-show="user.role === 'comum'">
+		<h3 align="center">Usuários</h3>
+	<div class='container-fluid .col-*'>
+		<div align = "center" class="container card card-shadow .col-xs-6" class="thumbnail" ng-repeat="user in users" ng-show="user.role ==='comum'">
 			<div class="caption">
-				<p><strong>Nome: </strong>{{user.name}}</p>
-				<p><strong>Email: </strong>{{user.email}}</p>
+				<p style="margin: 5px; font-weight: normal;"><strong>Nome:</strong> {{user.name}}</p>
+				<p style="margin: 5px; font-weight: normal;"><strong>Email:</strong> {{user.email}}</p>
 
 			</div>
 		</div>
+</div>
 
-	</div>
+<br>
 </body>
 </html>

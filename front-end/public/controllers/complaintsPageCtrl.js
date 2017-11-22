@@ -22,6 +22,14 @@ app.controller('complaintsPageCtrl', ['$scope', '$http', '$state', 'serverURL', 
 		});
 	}
 
+	$scope.goToHomePage = function() {
+		$state.go("home");
+	}
+
+	$scope.goToEditPage = function() {
+		$state.go("editBuilding", patrimony);
+	}
+
 	getImage = function(imagePath, callback){
 		$http({
 			method: 'GET',
