@@ -7,9 +7,9 @@
 <body>
 <h3 align="center">Veja logo abaixo uma lista com os patrimônios da nossa querida cidade!</h3>
 
-	<div class='container-fluid .col-*'>
+	<div class='container .col-*'>
 		</br>
-		<div class="container card card-shadow .col-xs-6">
+		<div class="container card .col-*">
 			<br>
 		<form name="formHome" id="formHome" class="form-horizontal" enctype="multipart/form-data">
 			<input type="text" id="searchField" class="form-control .col-*" ng-model="searchValue" ng-change="search()" placeholder="O que você está buscando?">
@@ -35,7 +35,7 @@
 
 		</br>
 
-		<div class="container card card-shadow .col-xs-6" ng-repeat="patrimony in patrimonies | startFrom: currentPage * pageSize | limitTo: pageSize" class="thumbnail">
+		<div class="container card card-shadow .col-*" ng-repeat="patrimony in patrimonies | startFrom: currentPage * pageSize | limitTo: pageSize" class="thumbnail">
 			<div class="caption">
 				<h2 class=".col-*"><strong>{{patrimony.name}}</strong></h2>
 				<p class="hidden-sm hidden-xs"><strong>História:</strong> {{patrimony.history | limitTo:200}}{{patrimony.history.length > 200 ? '...' : ''}}</p>
