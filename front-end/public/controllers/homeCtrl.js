@@ -18,9 +18,48 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 		}).then(function(response){
 			$scope.patrimonies = response.data;
 		});
+		refreshPatrimonies(addBuffer);		
 	}
 
-	getAllPatrimonies();
+	getPatWithImages = function(callback) {
+		$http({
+			method: 'GET',
+			url: serverURL.value+'/patrimony',
+		}).then(function(response){
+			console.log("in")			
+			callback(response.data, addBuffer);
+		});
+	}
+
+	refreshPatrimonies = function(data, callback) {
+		console.log(data)
+		for (var i = 0; i < data.length; i++) {
+			console.log("here")
+			$http({
+				method: 'GET',
+				url: serverURL.value + '/upload/image/'+data[i].imagePath,
+				responseType: 'arraybuffer'
+			}).then(function success(response){
+				if(response.status == 200){
+					callback(data, i, _arrayBufferToBase64(response.data));
+				} else {
+					alert('Houve um erro!');
+				}
+			}, function error(response){
+				console.log(response.status);
+			});
+		}
+	}
+
+	addBuffer = function(patrimonies, index, data) {
+		console.log(index)
+		console.log(patrimonies[index])
+		patrimonies[index].imageBuffer = data
+		$scope.patrimonies = patrimonies
+		console.log($scope.patrimonies)
+	}
+
+	getPatWithImages(refreshPatrimonies);
 
 	$scope.checkName = function() {
 		type = "name";
@@ -43,7 +82,6 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 	}
 
 	$scope.getPatrimonies = function(){
-		//return $filter("filter")($scope.patrimonies, $scope.searchValue);
 		var arr = [];
 		if($scope.searchValue == "") {
 			arr = $scope.patrimonies;
@@ -104,7 +142,6 @@ app.controller('homeCtrl', ['serverURL', '$scope', '$http', '$state', function(s
 	}
 
 	$scope.numberOfPages = function() {
-		console.log($scope.getPatrimonies().length)
 		return Math.ceil($scope.getPatrimonies().length/$scope.pageSize);
 	}
 }]);
