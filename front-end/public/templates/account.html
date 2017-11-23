@@ -13,13 +13,13 @@
       <h2 align="center"><strong>Minha conta</strong></h2>
 
       <div class="form-group">
-        <input type="text" class="form-control" value="{{user.name}}" required="true"><br>
+        <input type="text" class="form-control" ng-model = "name" placeholder="{{user.name}}" required="true"><br>
 
-        <input type="email" class="form-control" value="{{user.email}}" required="true"/><br>
+        <input type="email" class="form-control" ng-model = "email" placeholder="{{user.email}}" required="true"/><br>
 
-        <input id="password" type="password" class="form-control" name="password" ng-model="senha" placeholder="Nova senha" required="true"><br>
+        <input id="password" type="password" class="form-control" ng-model="password" placeholder="Nova senha" required="true"><br>
 
-        <input id="password-repeat" type="password" class="form-control" name="password-repeated" ng-model="senhaRepetida" value="" placeholder="Repetir senha" required="true"/><br>
+        <input id="password-repeat" type="password" class="form-control" ng-model="repeatPassword" value="" placeholder="Repetir senha" required="true"/><br>
       </div>
 
       <p ng-show="error" style="color: red; font-size: 15px;">{{error}}</p>
